@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://ju21ncpn3rae"]
+
+[ext_resource type="PackedScene" uid="uid://cfw8yi70insj3" path="res://Assets/Features/Player/top-down/player_top_down.tscn" id="1_tvra2"]
+[ext_resource type="Texture2D" uid="uid://7q8nimwtc8d4" path="res://Assets/Shared/icon.svg" id="2_y2o7w"]
+
+[node name="du_1" type="Node2D"]
+
+[node name="player_top_down" parent="." instance=ExtResource("1_tvra2")]
+position = Vector2(210, 127)
+
+[node name="Camera2D" type="Camera2D" parent="player_top_down"]
+position = Vector2(-210, -127)
+position_smoothing_enabled = true
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(-353, 233)
+scale = Vector2(0.3577375, 3.1244721)
+texture = ExtResource("2_y2o7w")
