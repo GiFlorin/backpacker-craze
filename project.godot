@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="Backpacker Craze"
-run/main_scene="uid://bne0yuwbpv2gt"
+run/main_scene="uid://ju21ncpn3rae"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://Assets/Shared/icon.svg"
+
+[autoload]
+
+GameManager="*res://Assets/Core/game_manager.gd"
 
 [display]
 

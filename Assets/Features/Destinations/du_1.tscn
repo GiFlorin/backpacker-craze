@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://ju21ncpn3rae"]
+[gd_scene load_steps=4 format=3 uid="uid://ju21ncpn3rae"]
 
 [ext_resource type="PackedScene" uid="uid://cfw8yi70insj3" path="res://Assets/Features/Player/top-down/player_top_down.tscn" id="1_tvra2"]
 [ext_resource type="Texture2D" uid="uid://7q8nimwtc8d4" path="res://Assets/Shared/icon.svg" id="2_y2o7w"]
+[ext_resource type="PackedScene" uid="uid://bnxhl4u2pv02m" path="res://Assets/Core/GUI/gui.tscn" id="3_y2o7w"]
 
 [node name="du_1" type="Node2D"]
 
@@ -16,3 +17,5 @@ position_smoothing_enabled = true
 position = Vector2(-353, 233)
 scale = Vector2(0.3577375, 3.1244721)
 texture = ExtResource("2_y2o7w")
+
+[node name="GUI" parent="." instance=ExtResource("3_y2o7w")]

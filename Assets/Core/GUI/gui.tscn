@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://bnxhl4u2pv02m"]
+
+[ext_resource type="PackedScene" uid="uid://cc2x16lkbvmvq" path="res://Assets/Features/Phone/phone.tscn" id="1_og5me"]
+
+[node name="GUI" type="CanvasLayer"]
+physics_interpolation_mode = 1
+
+[node name="Phone" parent="." instance=ExtResource("1_og5me")]
+position = Vector2(330, 1350)
+
+[node name="money_lbl" type="Label" parent="."]
+offset_left = 95.0
+offset_top = 68.0
+offset_right = 135.0
+offset_bottom = 117.0
+theme_override_font_sizes/font_size = 64
+text = "300
+"
