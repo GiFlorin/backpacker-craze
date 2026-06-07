@@ -1,7 +1,22 @@
-[gd_scene load_steps=7 format=3 uid="uid://cc2x16lkbvmvq"]
+[gd_scene load_steps=8 format=3 uid="uid://cc2x16lkbvmvq"]
 
-[ext_resource type="Script" uid="uid://djscq2tfvddsv" path="res://Assets/Features/Phone/phone.gd" id="1_c0dgp"]
+[ext_resource type="Script" uid="uid://djscq2tfvddsv" path="res://Assets/Core/GUI/Phone/phone.gd" id="1_c0dgp"]
 [ext_resource type="Texture2D" uid="uid://7q8nimwtc8d4" path="res://Assets/Shared/icon.svg" id="1_fu88h"]
+[ext_resource type="Texture2D" uid="uid://le7yxnvqupe6" path="res://Assets/Core/GUI/Phone/phone_placeholder_img-removebg-preview.png" id="2_12778"]
+
+[sub_resource type="Animation" id="Animation_04dg6"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("phone_shape:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-168, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
 
 [sub_resource type="Animation" id="Animation_c0dgp"]
 resource_name = "phone_in"
@@ -28,20 +43,6 @@ tracks/1/keys = {
 "handle_modes": PackedInt32Array(2, 0),
 "points": PackedFloat32Array(0, 0, 0, 0.6166667, 1.5, -750, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0.05, 0.6666667)
-}
-
-[sub_resource type="Animation" id="Animation_04dg6"]
-length = 0.001
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("phone_shape:position:y")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(-168, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_04dg6"]
@@ -71,8 +72,15 @@ scale = Vector2(3.544, 2.4593546)
 position = Vector2(-1.410839, -2.4396667)
 shape = SubResource("RectangleShape2D_04dg6")
 
+[node name="PhonePlaceholderImg" type="Sprite2D" parent="phone_shape"]
+scale = Vector2(0.46275398, 0.7156345)
+texture = ExtResource("2_12778")
+region_rect = Rect2(179, 8.5, 487, 776)
+
 [node name="Sprite_rig" type="Sprite2D" parent="phone_shape"]
+visible = false
 scale = Vector2(1, 2.515625)
 texture = ExtResource("1_fu88h")
+region_rect = Rect2(0, 0, 800, 800)
 
 [node name="Sprite_bg" type="Sprite2D" parent="phone_shape"]

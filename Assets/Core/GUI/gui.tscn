@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bnxhl4u2pv02m"]
 
-[ext_resource type="PackedScene" uid="uid://cc2x16lkbvmvq" path="res://Assets/Features/Phone/phone.tscn" id="1_og5me"]
+[ext_resource type="PackedScene" uid="uid://cc2x16lkbvmvq" path="res://Assets/Core/GUI/Phone/phone.tscn" id="1_og5me"]
 
 [node name="GUI" type="CanvasLayer"]
 physics_interpolation_mode = 1
