@@ -5,18 +5,20 @@
 [node name="MainMenu" type="Node2D" unique_id=906774019]
 
 [node name="Label" type="Label" parent="." unique_id=1735216619]
-offset_right = 40.0
-offset_bottom = 23.0
+offset_left = -101.0
+offset_top = -267.0
+offset_right = 81.0
+offset_bottom = -179.0
 theme_override_font_sizes/font_size = 64
 text = "Game"
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=718355671]
 
 [node name="play_button" type="Button" parent="." unique_id=1857274938]
-offset_left = 61.0
-offset_top = 164.0
-offset_right = 102.0
-offset_bottom = 195.0
+offset_left = -32.0
+offset_top = 115.0
+offset_right = 40.0
+offset_bottom = 168.0
 theme_override_font_sizes/font_size = 32
 text = "Play
 "

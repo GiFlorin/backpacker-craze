@@ -1,25 +1,29 @@
-[gd_scene load_steps=4 format=3 uid="uid://ju21ncpn3rae"]
+[gd_scene format=3 uid="uid://ju21ncpn3rae"]
 
 [ext_resource type="PackedScene" uid="uid://bnxhl4u2pv02m" path="res://Assets/Core/GUI/gui.tscn" id="2_jrfnj"]
 [ext_resource type="PackedScene" uid="uid://cfw8yi70insj3" path="res://Assets/Features/Player/top-down/player_top_down.tscn" id="3_34r65"]
+[ext_resource type="PackedScene" uid="uid://c05w6fpga42ua" path="res://Assets/Features/NPCs/test_NPC/test_NPC.tscn" id="4_koavb"]
 [ext_resource type="Texture2D" uid="uid://7q8nimwtc8d4" path="res://Assets/Shared/icon.svg" id="4_wcbp4"]
 
-[node name="du_1" type="Node2D"]
+[node name="du_1" type="Node2D" unique_id=1763371090]
 
-[node name="GUI" parent="." instance=ExtResource("2_jrfnj")]
+[node name="GUI" parent="." unique_id=1760749710 instance=ExtResource("2_jrfnj")]
 
-[node name="y-sort" type="Node2D" parent="."]
+[node name="y-sort" type="Node2D" parent="." unique_id=1620348064]
 y_sort_enabled = true
 
-[node name="player_top_down" parent="y-sort" instance=ExtResource("3_34r65")]
+[node name="player_top_down" parent="y-sort" unique_id=409976025 instance=ExtResource("3_34r65")]
 position = Vector2(210, 127)
 
-[node name="Camera2D" type="Camera2D" parent="y-sort/player_top_down"]
+[node name="Camera2D" type="Camera2D" parent="y-sort/player_top_down" unique_id=598675472]
 position = Vector2(-210, -127)
 position_smoothing_enabled = true
 
-[node name="Icon" type="Sprite2D" parent="y-sort"]
+[node name="Icon" type="Sprite2D" parent="y-sort" unique_id=20896120]
 position = Vector2(-354, 433)
 scale = Vector2(0.3577375, 3.1244721)
 texture = ExtResource("4_wcbp4")
 offset = Vector2(2.7953491, -64.01081)
+
+[node name="TestNpc" parent="." unique_id=56760943 instance=ExtResource("4_koavb")]
+position = Vector2(-215, -149)
