@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://8xfdssj8seon"]
+
+[ext_resource type="Script" uid="uid://ctliftpkyv2cl" path="res://Assets/Features/NPCs/Dialogue/dialogue_options.gd" id="1_dygic"]
+[ext_resource type="Script" uid="uid://cb03l346jnltk" path="res://Assets/Features/NPCs/Dialogue/small_dialogue.gd" id="1_htyfg"]
+[ext_resource type="Texture2D" uid="uid://7q8nimwtc8d4" path="res://Assets/Shared/icon.svg" id="1_nfkxm"]
+
+[node name="Dialogue" type="Control" unique_id=1369785993]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_htyfg")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=1302491801]
+layout_mode = 0
+offset_left = -97.0
+offset_top = -99.0
+offset_right = 101.0
+offset_bottom = -5.0
+texture = ExtResource("1_nfkxm")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="NinePatchRect" unique_id=1529801288]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.101
+offset_left = 20.0
+offset_top = 14.0
+offset_right = 161.002
+offset_bottom = 83.0
+text = "text text text"
+
+[node name="dialogue_options" type="Node" parent="." unique_id=622021927]
+script = ExtResource("1_dygic")

@@ -9,4 +9,7 @@ var cur_destination = ''
 var previous_scene: String = ""
 var player_position: Vector2 = Vector2.ZERO
 
-# NPC relationship levels
+# NPC relationship levels 0-3
+var test_npc_rel: int = 0
+
+# jobs and tasks complete

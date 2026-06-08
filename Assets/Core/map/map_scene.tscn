@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bveo842epkipk"]
 
 [ext_resource type="Texture2D" uid="uid://bf2x7uxb7f5yx" path="res://Assets/Core/map/comon-worldmap.jpg" id="1_c520u"]
+[ext_resource type="Script" uid="uid://cm6fuju7bxad5" path="res://Assets/Core/map/destinations.gd" id="2_k2vqb"]
 [ext_resource type="Texture2D" uid="uid://7q8nimwtc8d4" path="res://Assets/Shared/icon.svg" id="2_ujw0f"]
 [ext_resource type="Texture2D" uid="uid://dylf6buecphv2" path="res://Assets/Features/Player/top-down/16x32 All Animations-Sheet.png" id="3_nkmo8"]
 [ext_resource type="Script" uid="uid://entquc32ol3h" path="res://Assets/Core/map/go_back_button.gd" id="4_nkmo8"]
@@ -25,6 +26,7 @@ position = Vector2(421, -98)
 points = PackedVector2Array(103, -222, -1197, -64)
 
 [node name="destinations" type="Node2D" parent="." unique_id=1620455962]
+script = ExtResource("2_k2vqb")
 
 [node name="Dest1" type="TextureButton" parent="destinations" unique_id=1428860303]
 offset_left = 153.0

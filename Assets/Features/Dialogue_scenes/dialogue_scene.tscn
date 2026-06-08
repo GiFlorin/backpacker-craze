@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://ctti1ly30v3p6"]
+
+[ext_resource type="Texture2D" uid="uid://7q8nimwtc8d4" path="res://Assets/Shared/icon.svg" id="1_gbyjl"]
+
+[node name="dialogue_scene" type="Control" unique_id=2140424657]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="backgrounds" type="Node2D" parent="." unique_id=24608802]
+
+[node name="player_sprite" type="Node2D" parent="." unique_id=1117874436]
+
+[node name="npc_sprite" type="Node2D" parent="." unique_id=1349788039]
+
+[node name="dialogue_box" type="Control" parent="." unique_id=2116486727]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="NinePatchRect" type="NinePatchRect" parent="dialogue_box" unique_id=2108500493]
+layout_mode = 0
+offset_left = -902.0
+offset_top = 114.0
+offset_right = 906.0
+offset_bottom = 491.0
+texture = ExtResource("1_gbyjl")
+
+[node name="name" type="RichTextLabel" parent="dialogue_box/NinePatchRect" unique_id=492383467]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.034
+anchor_bottom = 0.053000003
+offset_left = 87.0
+offset_top = 11.0
+offset_right = 342.52798
+offset_bottom = 96.019
+theme_override_font_sizes/normal_font_size = 64
+text = "name"
+
+[node name="text" type="RichTextLabel" parent="dialogue_box/NinePatchRect" unique_id=1131128038]
+layout_mode = 0
+offset_left = 89.0
+offset_top = 97.0
+offset_right = 223.0
+offset_bottom = 185.0
+theme_override_font_sizes/normal_font_size = 32
+text = "hello!"
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=932320669]

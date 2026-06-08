@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dylf6buecphv2" path="res://Assets/Features/Player/top-down/16x32 All Animations-Sheet.png" id="1_7h0l3"]
 [ext_resource type="Script" uid="uid://c7bus7cn577hl" path="res://Assets/Features/NPCs/test_NPC/test_npc.gd" id="1_7l48l"]
+[ext_resource type="PackedScene" uid="uid://8xfdssj8seon" path="res://Assets/Features/NPCs/Dialogue/small_dialogue.tscn" id="3_f6hga"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kuldf"]
 atlas = ExtResource("1_7h0l3")
@@ -202,7 +203,7 @@ radius = 19.0
 height = 96.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_l26g2"]
-radius = 136.29747
+radius = 163.0276
 
 [node name="TestNpc" type="CharacterBody2D" unique_id=56760943]
 script = ExtResource("1_7l48l")
@@ -226,6 +227,23 @@ shape = SubResource("CircleShape2D_l26g2")
 
 [node name="Timer" type="Timer" parent="." unique_id=1030227786]
 autostart = true
+
+[node name="Dialogue" parent="." unique_id=1369785993 instance=ExtResource("3_f6hga")]
+offset_top = -119.0
+offset_bottom = -119.0
+
+[node name="interactable_icon" type="ColorRect" parent="." unique_id=517379918]
+offset_left = -20.0
+offset_top = -164.0
+offset_right = 20.0
+offset_bottom = -124.0
+
+[node name="important_icon" type="ColorRect" parent="." unique_id=1343260083]
+offset_left = -20.0
+offset_top = -164.0
+offset_right = 20.0
+offset_bottom = -124.0
+color = Color(0.8879659, 0.3343143, 0.23251805, 1)
 
 [connection signal="body_entered" from="chat_detection_area" to="." method="_on_chat_detection_area_body_entered"]
 [connection signal="body_exited" from="chat_detection_area" to="." method="_on_chat_detection_area_body_exited"]

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://d1iyohvh2s85n"
+path="res://.godot/imported/Entombed in Frost ver.5 test.wav-26d5d0e3540e0452db84d69374617001.sample"
+
+[deps]
+
+source_file="res://Assets/Shared/Entombed in Frost ver.5 test.wav"
+dest_files=["res://.godot/imported/Entombed in Frost ver.5 test.wav-26d5d0e3540e0452db84d69374617001.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=2
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

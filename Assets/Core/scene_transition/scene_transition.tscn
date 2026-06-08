@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://x4ksrb34p7a1"]
 
 [ext_resource type="Script" uid="uid://je7lonerrpo0" path="res://Assets/Core/scene_transition/scene_transition.gd" id="1_fn0bf"]
+[ext_resource type="Texture2D" uid="uid://cud7d3cx385n1" path="res://Assets/Core/scene_transition/cloud.png" id="2_bxdlu"]
+[ext_resource type="Texture2D" uid="uid://l4vycv0ksfxh" path="res://Assets/Core/scene_transition/transition_screen.png" id="3_gfdh2"]
 
 [sub_resource type="Animation" id="Animation_jovso"]
 resource_name = "RESET"
@@ -16,6 +18,50 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("clouds:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_bptj3"]
+resource_name = "clouds_in"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("clouds:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 1543)]
+}
+
+[sub_resource type="Animation" id="Animation_nvp6p"]
+resource_name = "clouds_out"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("clouds:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 1543), Vector2(0, 3259)]
 }
 
 [sub_resource type="Animation" id="Animation_d0330"]
@@ -37,6 +83,8 @@ tracks/0/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_qntqn"]
 _data = {
 &"RESET": SubResource("Animation_jovso"),
+&"clouds_in": SubResource("Animation_bptj3"),
+&"clouds_out": SubResource("Animation_nvp6p"),
 &"dissolve": SubResource("Animation_d0330")
 }
 
@@ -57,3 +105,42 @@ color = Color(0.018175013, 0.010333224, 0.05768592, 1)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1530656843]
 libraries/ = SubResource("AnimationLibrary_qntqn")
+
+[node name="clouds" type="Node2D" parent="." unique_id=2129251046]
+
+[node name="Cloud" type="Sprite2D" parent="clouds" unique_id=1785359948]
+position = Vector2(1126, -360)
+scale = Vector2(2, 2)
+texture = ExtResource("2_bxdlu")
+
+[node name="TransitionScreen" type="Sprite2D" parent="clouds" unique_id=521131384]
+position = Vector2(957.00006, -975)
+scale = Vector2(3, 3)
+texture = ExtResource("3_gfdh2")
+
+[node name="Cloud2" type="Sprite2D" parent="clouds" unique_id=1849925957]
+position = Vector2(1384, -169)
+texture = ExtResource("2_bxdlu")
+
+[node name="Cloud3" type="Sprite2D" parent="clouds" unique_id=699830126]
+position = Vector2(257, -248)
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("2_bxdlu")
+
+[node name="Cloud4" type="Sprite2D" parent="clouds" unique_id=364946457]
+position = Vector2(470, -271)
+texture = ExtResource("2_bxdlu")
+
+[node name="Cloud5" type="Sprite2D" parent="clouds" unique_id=582861371]
+position = Vector2(351, -1832)
+texture = ExtResource("2_bxdlu")
+
+[node name="Cloud6" type="Sprite2D" parent="clouds" unique_id=1982003326]
+position = Vector2(1170, -1950)
+scale = Vector2(3, 3)
+texture = ExtResource("2_bxdlu")
+
+[node name="Cloud7" type="Sprite2D" parent="clouds" unique_id=1129322620]
+position = Vector2(1297, -1777)
+scale = Vector2(2, 2)
+texture = ExtResource("2_bxdlu")
