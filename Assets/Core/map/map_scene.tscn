@@ -83,4 +83,5 @@ theme_override_font_sizes/font_size = 32
 text = "Go back"
 script = ExtResource("4_nkmo8")
 
+[connection signal="pressed" from="destinations/Dest1" to="destinations" method="_on_dest_1_pressed"]
 [connection signal="pressed" from="go_back_button" to="go_back_button" method="_on_pressed"]

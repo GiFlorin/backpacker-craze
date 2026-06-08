@@ -237,12 +237,14 @@ offset_left = -20.0
 offset_top = -164.0
 offset_right = 20.0
 offset_bottom = -124.0
+mouse_filter = 2
 
 [node name="important_icon" type="ColorRect" parent="." unique_id=1343260083]
 offset_left = -20.0
 offset_top = -164.0
 offset_right = 20.0
 offset_bottom = -124.0
+mouse_filter = 2
 color = Color(0.8879659, 0.3343143, 0.23251805, 1)
 
 [connection signal="body_entered" from="chat_detection_area" to="." method="_on_chat_detection_area_body_entered"]

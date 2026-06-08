@@ -14,6 +14,7 @@ offset_left = -4870.0
 offset_top = -4955.0
 offset_right = 7542.0
 offset_bottom = 3964.0
+mouse_filter = 2
 color = Color(0.25434595, 0.5094617, 0.3175112, 1)
 
 [node name="GUI" parent="." unique_id=1760749710 instance=ExtResource("2_jrfnj")]
