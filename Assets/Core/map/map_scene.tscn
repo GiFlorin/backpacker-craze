@@ -1,0 +1,84 @@
+[gd_scene format=3 uid="uid://bveo842epkipk"]
+
+[ext_resource type="Texture2D" uid="uid://bf2x7uxb7f5yx" path="res://Assets/Core/map/comon-worldmap.jpg" id="1_c520u"]
+[ext_resource type="Texture2D" uid="uid://7q8nimwtc8d4" path="res://Assets/Shared/icon.svg" id="2_ujw0f"]
+[ext_resource type="Texture2D" uid="uid://dylf6buecphv2" path="res://Assets/Features/Player/top-down/16x32 All Animations-Sheet.png" id="3_nkmo8"]
+[ext_resource type="Script" uid="uid://entquc32ol3h" path="res://Assets/Core/map/go_back_button.gd" id="4_nkmo8"]
+
+[node name="map_scene" type="Node2D" unique_id=583755151]
+
+[node name="ComonWorldmap" type="Sprite2D" parent="." unique_id=987774114]
+position = Vector2(72, 215)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_c520u")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=548053720]
+
+[node name="paths" type="Node2D" parent="." unique_id=1135386937]
+
+[node name="Line2D" type="Line2D" parent="paths" unique_id=206858565]
+position = Vector2(421, -98)
+points = PackedVector2Array(79, -178, -164, 141)
+
+[node name="Line2D2" type="Line2D" parent="paths" unique_id=213442219]
+position = Vector2(421, -98)
+points = PackedVector2Array(103, -222, -1197, -64)
+
+[node name="destinations" type="Node2D" parent="." unique_id=1620455962]
+
+[node name="Dest1" type="TextureButton" parent="destinations" unique_id=1428860303]
+offset_left = 153.0
+offset_top = 2.0
+offset_right = 281.0
+offset_bottom = 130.0
+texture_normal = ExtResource("2_ujw0f")
+
+[node name="Dest2" type="TextureButton" parent="destinations" unique_id=1853942587]
+offset_left = -425.0
+offset_top = 241.0
+offset_right = -297.0
+offset_bottom = 369.0
+texture_normal = ExtResource("2_ujw0f")
+
+[node name="Dest3" type="TextureButton" parent="destinations" unique_id=1666534791]
+modulate = Color(0.7649738, 0.9857119, 2.3102762e-06, 1)
+offset_left = 469.0
+offset_top = -379.0
+offset_right = 597.0
+offset_bottom = -251.0
+texture_normal = ExtResource("2_ujw0f")
+
+[node name="Home" type="TextureButton" parent="destinations" unique_id=897100523]
+offset_left = -846.0
+offset_top = -233.0
+offset_right = -718.0
+offset_bottom = -105.0
+texture_normal = ExtResource("2_ujw0f")
+
+[node name="Player" type="Sprite2D" parent="." unique_id=1975513944]
+texture_filter = 1
+position = Vector2(536.9999, -377)
+scale = Vector2(5, 5)
+texture = ExtResource("3_nkmo8")
+region_enabled = true
+region_rect = Rect2(0, 0, 33.264, 37.5)
+
+[node name="Label" type="Label" parent="." unique_id=1611047020]
+offset_left = -882.0
+offset_top = -119.0
+offset_right = -644.0
+offset_bottom = 60.0
+theme_override_font_sizes/font_size = 64
+text = "Home!!!
+"
+
+[node name="go_back_button" type="Button" parent="." unique_id=981272534]
+offset_left = -856.0
+offset_top = -472.0
+offset_right = -786.0
+offset_bottom = -441.0
+theme_override_font_sizes/font_size = 32
+text = "Go back"
+script = ExtResource("4_nkmo8")
+
+[connection signal="pressed" from="go_back_button" to="go_back_button" method="_on_pressed"]

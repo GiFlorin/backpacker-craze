@@ -1,4 +1,4 @@
-[gd_scene load_steps=79 format=3 uid="uid://cfw8yi70insj3"]
+[gd_scene format=3 uid="uid://cfw8yi70insj3"]
 
 [ext_resource type="Script" uid="uid://60d0a0sqb2q3" path="res://Assets/Features/Player/top-down/player_top_down.gd" id="1_1e1qb"]
 [ext_resource type="Texture2D" uid="uid://dylf6buecphv2" path="res://Assets/Features/Player/top-down/16x32 All Animations-Sheet.png" id="2_1a75d"]
@@ -578,30 +578,30 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1e1qb"]
 size = Vector2(49, 38)
 
-[node name="player_top_down" type="CharacterBody2D"]
+[node name="player_top_down" type="CharacterBody2D" unique_id=487611596]
 script = ExtResource("1_1e1qb")
 
-[node name="AnimatedSprite" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite" type="AnimatedSprite2D" parent="." unique_id=388849534]
 texture_filter = 1
 position = Vector2(0, -65.99999)
 scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_jxxnn")
 animation = &"run_up_side"
-frame_progress = 0.668451
+frame_progress = 0.629443
 
-[node name="CollisionShape" type="CollisionShape2D" parent="."]
+[node name="CollisionShape" type="CollisionShape2D" parent="." unique_id=2041537808]
 position = Vector2(0.5, -16)
 shape = SubResource("RectangleShape2D_1e1qb")
 
-[node name="state_machine" type="Node2D" parent="."]
+[node name="state_machine" type="Node2D" parent="." unique_id=1688219790]
 position = Vector2(0, -66)
 script = ExtResource("4_kuldf")
 
-[node name="idle" type="Node2D" parent="state_machine"]
+[node name="idle" type="Node2D" parent="state_machine" unique_id=888303082]
 script = ExtResource("4_de3b5")
 
-[node name="walk" type="Node2D" parent="state_machine"]
+[node name="walk" type="Node2D" parent="state_machine" unique_id=1389662538]
 script = ExtResource("5_kg1ta")
 
-[node name="run" type="Node2D" parent="state_machine"]
+[node name="run" type="Node2D" parent="state_machine" unique_id=512486275]
 script = ExtResource("6_660pn")
