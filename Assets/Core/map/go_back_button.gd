@@ -6,4 +6,4 @@ func _on_pressed() -> void:
 func close_map():
 	if GameManager.previous_scene == "":
 		return  # safety check
-	get_tree().change_scene_to_file(GameManager.previous_scene)
+	SceneTransition.change_scene(GameManager.previous_scene)

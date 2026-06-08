@@ -3,7 +3,7 @@ extends TextureButton
 var is_hovered = false
 
 func _on_button_down() -> void:
-	get_tree().change_scene_to_file("res://Assets/Core/map/map_scene.tscn")
+	open_map()
 
 func _on_mouse_entered() -> void:
 	is_hovered = true
@@ -16,4 +16,4 @@ func open_map():
 	GameManager.previous_scene = get_tree().current_scene.scene_file_path
 
 	# Go to map
-	get_tree().change_scene_to_file("res://scenes/Map.tscn")
+	SceneTransition.change_scene("res://Assets/Core/map/map_scene.tscn")

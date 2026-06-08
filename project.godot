@@ -21,7 +21,8 @@ config/icon="res://Assets/Shared/icon.svg"
 
 [autoload]
 
-GameManager="*res://Assets/Core/game_manager.gd"
+GameManager="*res://Assets/Core/game_manager/game_manager.gd"
+SceneTransition="*uid://x4ksrb34p7a1"
 
 [display]
 
@@ -38,7 +39,8 @@ folder_colors={
 "res://Assets/": "orange",
 "res://Assets/Core/": "green",
 "res://Assets/Features/": "blue",
-"res://Assets/Shared/": "purple"
+"res://Assets/Shared/": "purple",
+"res://Assets/UI/": "red"
 }
 
 [input]

@@ -1,0 +1,4 @@
+extends Button
+
+func _on_pressed() -> void:
+	SceneTransition.change_scene("res://Assets/Features/Destinations/tests/du_1.tscn")

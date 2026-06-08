@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://ccsqyt075cbul"]
+
+[ext_resource type="Script" uid="uid://onj2bhaxi8fl" path="res://Assets/UI/play_button.gd" id="1_af46u"]
+
+[node name="MainMenu" type="Node2D" unique_id=906774019]
+
+[node name="Label" type="Label" parent="." unique_id=1735216619]
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 64
+text = "Game"
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=718355671]
+
+[node name="play_button" type="Button" parent="." unique_id=1857274938]
+offset_left = 61.0
+offset_top = 164.0
+offset_right = 102.0
+offset_bottom = 195.0
+theme_override_font_sizes/font_size = 32
+text = "Play
+"
+script = ExtResource("1_af46u")
+
+[connection signal="pressed" from="play_button" to="play_button" method="_on_pressed"]
