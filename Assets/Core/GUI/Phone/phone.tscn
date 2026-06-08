@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://cc2x16lkbvmvq"]
+[gd_scene load_steps=9 format=3 uid="uid://cc2x16lkbvmvq"]
 
 [ext_resource type="Script" uid="uid://djscq2tfvddsv" path="res://Assets/Core/GUI/Phone/phone.gd" id="1_c0dgp"]
 [ext_resource type="Texture2D" uid="uid://7q8nimwtc8d4" path="res://Assets/Shared/icon.svg" id="1_fu88h"]
 [ext_resource type="Texture2D" uid="uid://le7yxnvqupe6" path="res://Assets/Core/GUI/Phone/phone_placeholder_img-removebg-preview.png" id="2_12778"]
+[ext_resource type="Script" uid="uid://cw8l50lf7yk0u" path="res://Assets/Core/GUI/Phone/map_app.gd" id="4_m6nwh"]
 
 [sub_resource type="Animation" id="Animation_04dg6"]
 length = 0.001
@@ -84,3 +85,22 @@ texture = ExtResource("1_fu88h")
 region_rect = Rect2(0, 0, 800, 800)
 
 [node name="Sprite_bg" type="Sprite2D" parent="phone_shape"]
+
+[node name="app_icons" type="Node2D" parent="phone_shape"]
+position = Vector2(0, 68.3106)
+scale = Vector2(0.28216705, 0.40661073)
+
+[node name="map_app" type="TextureButton" parent="phone_shape/app_icons"]
+offset_left = -139.0
+offset_top = -446.0
+offset_right = -11.0
+offset_bottom = -318.0
+tooltip_text = "map"
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("1_fu88h")
+texture_pressed = ExtResource("1_fu88h")
+script = ExtResource("4_m6nwh")
+
+[connection signal="button_down" from="phone_shape/app_icons/map_app" to="phone_shape/app_icons/map_app" method="_on_button_down"]
+[connection signal="mouse_entered" from="phone_shape/app_icons/map_app" to="phone_shape/app_icons/map_app" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="phone_shape/app_icons/map_app" to="phone_shape/app_icons/map_app" method="_on_mouse_exited"]

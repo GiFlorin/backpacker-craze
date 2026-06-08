@@ -48,7 +48,7 @@ func set_facing_direction():
 		is_walking = false
 
 func process_state():
-	if Input.get_axis("Left", "Right") < 0 or facing_direction == 'left' or facing_direction == 'up left' or facing_direction == 'down left':
+	if facing_direction == 'left' or facing_direction == 'up left' or facing_direction == 'down left':
 		animated_sprite.flip_h = true
 	else:
 		animated_sprite.flip_h = false
@@ -65,6 +65,5 @@ func process_state():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	set_facing_direction()
-	print(facing_direction)
 	cur_animation = process_state()
 	animated_sprite.play(cur_animation)

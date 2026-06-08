@@ -6,16 +6,20 @@
 
 [node name="du_1" type="Node2D"]
 
-[node name="player_top_down" parent="." instance=ExtResource("1_tvra2")]
+[node name="GUI" parent="." instance=ExtResource("3_y2o7w")]
+
+[node name="y-sort" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="player_top_down" parent="y-sort" instance=ExtResource("1_tvra2")]
 position = Vector2(210, 127)
 
-[node name="Camera2D" type="Camera2D" parent="player_top_down"]
+[node name="Camera2D" type="Camera2D" parent="y-sort/player_top_down"]
 position = Vector2(-210, -127)
 position_smoothing_enabled = true
 
-[node name="Icon" type="Sprite2D" parent="."]
-position = Vector2(-353, 233)
+[node name="Icon" type="Sprite2D" parent="y-sort"]
+position = Vector2(-354, 433)
 scale = Vector2(0.3577375, 3.1244721)
 texture = ExtResource("2_y2o7w")
-
-[node name="GUI" parent="." instance=ExtResource("3_y2o7w")]
+offset = Vector2(2.7953491, -64.01081)

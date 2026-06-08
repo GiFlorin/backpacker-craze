@@ -576,23 +576,25 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1e1qb"]
-size = Vector2(85, 134)
+size = Vector2(49, 38)
 
 [node name="player_top_down" type="CharacterBody2D"]
 script = ExtResource("1_1e1qb")
 
 [node name="AnimatedSprite" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
+position = Vector2(0, -65.99999)
 scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_jxxnn")
 animation = &"run_up_side"
-frame_progress = 0.6909912
+frame_progress = 0.668451
 
 [node name="CollisionShape" type="CollisionShape2D" parent="."]
-position = Vector2(-5.5, 2)
+position = Vector2(0.5, -16)
 shape = SubResource("RectangleShape2D_1e1qb")
 
 [node name="state_machine" type="Node2D" parent="."]
+position = Vector2(0, -66)
 script = ExtResource("4_kuldf")
 
 [node name="idle" type="Node2D" parent="state_machine"]
