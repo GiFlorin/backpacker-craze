@@ -1,14 +1,16 @@
-[gd_scene load_steps=2 format=3 uid="uid://bnxhl4u2pv02m"]
+[gd_scene format=3 uid="uid://bnxhl4u2pv02m"]
 
+[ext_resource type="Script" uid="uid://tdrbog5kwtyu" path="res://Assets/Core/GUI/gui.gd" id="1_l4hkh"]
 [ext_resource type="PackedScene" uid="uid://cc2x16lkbvmvq" path="res://Assets/Core/GUI/Phone/phone.tscn" id="1_og5me"]
 
-[node name="GUI" type="CanvasLayer"]
+[node name="GUI" type="CanvasLayer" unique_id=872021652]
 physics_interpolation_mode = 1
+script = ExtResource("1_l4hkh")
 
-[node name="Phone" parent="." instance=ExtResource("1_og5me")]
+[node name="Phone" parent="." unique_id=1396307392 instance=ExtResource("1_og5me")]
 position = Vector2(330, 1350)
 
-[node name="money_lbl" type="Label" parent="."]
+[node name="money_lbl" type="Label" parent="." unique_id=306398211]
 offset_left = 95.0
 offset_top = 68.0
 offset_right = 135.0

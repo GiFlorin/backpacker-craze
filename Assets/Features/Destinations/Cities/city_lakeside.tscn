@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://4v2lxfe5mkis"]
+
+[ext_resource type="Script" uid="uid://cfjfa7tmfpvlt" path="res://Assets/Features/Destinations/Cities/city_lakeside.gd" id="1_60h7v"]
+[ext_resource type="PackedScene" uid="uid://cfw8yi70insj3" path="res://Assets/Features/Player/top-down/player_top_down.tscn" id="1_pcx25"]
+[ext_resource type="PackedScene" uid="uid://bnxhl4u2pv02m" path="res://Assets/Core/GUI/gui.tscn" id="2_60h7v"]
+[ext_resource type="PackedScene" uid="uid://c05w6fpga42ua" path="res://Assets/Features/NPCs/test_NPC/test_NPC.tscn" id="3_ljh3p"]
+
+[node name="City_lakeside" type="Node2D" unique_id=1039054187]
+script = ExtResource("1_60h7v")
+
+[node name="player_top_down" parent="." unique_id=487611596 instance=ExtResource("1_pcx25")]
+
+[node name="Camera2D" type="Camera2D" parent="player_top_down" unique_id=1921532350]
+position_smoothing_enabled = true
+
+[node name="GUI" parent="." unique_id=872021652 instance=ExtResource("2_60h7v")]
+
+[node name="TestNpc" parent="." unique_id=56760943 instance=ExtResource("3_ljh3p")]
+position = Vector2(315, -122)
