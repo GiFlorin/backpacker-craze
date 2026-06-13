@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://c0l744m4ut552"]
+
+[ext_resource type="Script" uid="uid://c7ipilon2oi57" path="res://Assets/Features/Minigames/surf_minigame/results_surf.gd" id="1_5netb"]
+
+[node name="results_surf" type="Node2D" unique_id=1598406653]
+script = ExtResource("1_5netb")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=654794787]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=1273333434]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.510198, 0.5127772, 1)
+
+[node name="Label2" type="Label" parent="CanvasLayer" unique_id=1483425612]
+offset_left = 784.0
+offset_top = 344.0
+offset_right = 1158.0
+offset_bottom = 389.0
+theme_override_font_sizes/font_size = 32
+text = "You made $1000 in total"
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=761109167]
+offset_left = 823.0
+offset_top = 244.0
+offset_right = 1110.0
+offset_bottom = 332.0
+theme_override_font_sizes/font_size = 64
+text = "You died!"
+
+[node name="go_back_button" type="Button" parent="CanvasLayer" unique_id=160798542]
+offset_left = 889.0
+offset_top = 591.0
+offset_right = 1015.0
+offset_bottom = 644.0
+theme_override_font_sizes/font_size = 32
+text = "go back"
+
+[node name="restart_button" type="Button" parent="CanvasLayer" unique_id=1636672208]
+offset_left = 889.0
+offset_top = 505.0
+offset_right = 1003.0
+offset_bottom = 558.0
+theme_override_font_sizes/font_size = 32
+text = "restart"
+
+[connection signal="pressed" from="CanvasLayer/go_back_button" to="." method="_on_go_back_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/restart_button" to="." method="_on_restart_button_pressed"]

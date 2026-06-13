@@ -19,3 +19,4 @@ enum {
 var test_npc_rel: int = 0
 
 # jobs and tasks complete
+var past_job_points = 0
