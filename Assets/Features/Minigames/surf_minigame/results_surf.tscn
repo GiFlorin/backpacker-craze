@@ -15,10 +15,10 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0.510198, 0.5127772, 1)
 
-[node name="Label2" type="Label" parent="CanvasLayer" unique_id=1483425612]
-offset_left = 784.0
+[node name="points_lbl" type="Label" parent="CanvasLayer" unique_id=1483425612]
+offset_left = 770.0
 offset_top = 344.0
-offset_right = 1158.0
+offset_right = 1144.0
 offset_bottom = 389.0
 theme_override_font_sizes/font_size = 32
 text = "You made $1000 in total"

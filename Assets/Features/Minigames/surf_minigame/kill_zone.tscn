@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://camax4evx1kbd"]
+
+[ext_resource type="Script" uid="uid://bwhljc5ts1sgg" path="res://Assets/Features/Minigames/surf_minigame/kill_zone.gd" id="1_10fuh"]
+
+[node name="kill_zone" type="Area2D" unique_id=190844854]
+script = ExtResource("1_10fuh")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

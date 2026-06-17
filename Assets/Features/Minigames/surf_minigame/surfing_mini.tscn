@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://b0u2bck8uacms" path="res://Assets/Features/Minigames/surf_minigame/meter.gd" id="4_ru2ib"]
 [ext_resource type="Script" uid="uid://bf8p18v4kxcth" path="res://Assets/Features/Minigames/surf_minigame/bird.gd" id="5_cc86o"]
 [ext_resource type="Script" uid="uid://bddveugacyoem" path="res://Assets/Features/Minigames/surf_minigame/rock.gd" id="6_dsbb3"]
+[ext_resource type="PackedScene" uid="uid://camax4evx1kbd" path="res://Assets/Features/Minigames/surf_minigame/kill_zone.tscn" id="7_4b44v"]
 [ext_resource type="Script" uid="uid://b48wv8eyea04x" path="res://Assets/Features/Minigames/surf_minigame/bird_spawner.gd" id="7_cc86o"]
 [ext_resource type="Script" uid="uid://c7288sl86etet" path="res://Assets/Features/Minigames/surf_minigame/kill_clone.gd" id="7_dsbb3"]
 
@@ -17,7 +18,7 @@ length = 0.001
 tracks/0/type = "bezier"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("../../player:position:y")
+tracks/0/path = NodePath("../../player_area:position:y")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -28,7 +29,7 @@ tracks/0/keys = {
 tracks/1/type = "bezier"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("../../player/character:position:x")
+tracks/1/path = NodePath("../../player_area/character:position:x")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -43,7 +44,7 @@ length = 2.0
 tracks/0/type = "bezier"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("../../player/character:position:x")
+tracks/0/path = NodePath("../../player_area/character:position:x")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -58,7 +59,7 @@ length = 4.0
 tracks/0/type = "bezier"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("../../player:position:y")
+tracks/0/path = NodePath("../../player_area:position:y")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -73,7 +74,7 @@ length = 3.5
 tracks/0/type = "bezier"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("../../player:position:y")
+tracks/0/path = NodePath("../../player_area:position:y")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -88,7 +89,7 @@ length = 4.0
 tracks/0/type = "bezier"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("../../player:position:y")
+tracks/0/path = NodePath("../../player_area:position:y")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -122,6 +123,9 @@ size = Vector2(90, 95)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s4r1h"]
 size = Vector2(41, 1074)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fg27p"]
+size = Vector2(2102.25, 264.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qfmjg"]
 size = Vector2(89, 190)
@@ -190,22 +194,27 @@ shape = SubResource("RectangleShape2D_6se7f")
 position = Vector2(843.5, 120.5)
 script = ExtResource("5_cc86o")
 
+[node name="kill_zone" parent="obstacles/bird" unique_id=190844854 instance=ExtResource("7_4b44v")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="obstacles/bird/kill_zone" unique_id=1833181947]
+position = Vector2(-23.5, 19.5)
+shape = SubResource("RectangleShape2D_j1mmn")
+
 [node name="ColorRect" type="ColorRect" parent="obstacles/bird" unique_id=1508718192]
 offset_left = -134.0
 offset_right = 85.0
 offset_bottom = 40.0
 color = Color(0.380189, 0.380189, 0.38018897, 1)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="obstacles/bird" unique_id=1833181947]
-position = Vector2(-23.5, 19.5)
-shape = SubResource("RectangleShape2D_j1mmn")
-
 [node name="rock" type="RigidBody2D" parent="obstacles" unique_id=428773897 groups=["clones"]]
 position = Vector2(1018.5, 87.5)
 script = ExtResource("6_dsbb3")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="obstacles/rock" unique_id=991166679]
-position = Vector2(47, 49.5)
+[node name="kill_zone" parent="obstacles/rock" unique_id=1260339273 instance=ExtResource("7_4b44v")]
+position = Vector2(-1018.5, -87.5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="obstacles/rock/kill_zone" unique_id=991166679]
+position = Vector2(1065.5, 137)
 shape = SubResource("RectangleShape2D_wboyh")
 
 [node name="ColorRect" type="ColorRect" parent="obstacles/rock" unique_id=359884473]
@@ -229,50 +238,51 @@ script = ExtResource("7_dsbb3")
 position = Vector2(-1051, -536.5)
 shape = SubResource("RectangleShape2D_s4r1h")
 
-[node name="player" type="CharacterBody2D" parent="." unique_id=438039381]
+[node name="ceiling" type="StaticBody2D" parent="obstacles" unique_id=599212199]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="obstacles/ceiling" unique_id=2124105426]
+position = Vector2(-15.5, -844.5)
+shape = SubResource("RectangleShape2D_fg27p")
+
+[node name="player_area" type="CharacterBody2D" parent="." unique_id=438039381 groups=["Player"]]
 position = Vector2(-506, 354)
 script = ExtResource("2_elgy1")
 
-[node name="wave" type="ColorRect" parent="player" unique_id=910007606]
+[node name="wave" type="ColorRect" parent="player_area" unique_id=910007606]
 offset_left = -680.0
 offset_top = 14.0
 offset_right = 508.0
 offset_bottom = 524.0
 color = Color(0.56078434, 0.77254903, 1, 1)
 
-[node name="surfboard" type="ColorRect" parent="player" unique_id=525890605 groups=["Player"]]
-offset_right = 479.0
-offset_bottom = 40.0
-color = Color(0.80784315, 0, 0.5372549, 1)
-
-[node name="surfer" type="ColorRect" parent="player" unique_id=1925161292 groups=["Player"]]
-offset_left = 246.0
-offset_top = -195.0
-offset_right = 353.0
-offset_bottom = 21.0
-color = Color(0.9221518, 0.32839724, 0.3198729, 1)
-
-[node name="character" type="ColorRect" parent="player" unique_id=405533021]
+[node name="character" type="ColorRect" parent="player_area" unique_id=405533021]
 offset_left = -120.0
 offset_top = -43.0
 offset_right = -18.0
 offset_bottom = 39.0
 color = Color(0.9855954, 0.60261136, 0.52028936, 1)
 
-[node name="CollisionShape" type="CollisionShape2D" parent="player" unique_id=1705390281 groups=["Player"]]
+[node name="player" type="CharacterBody2D" parent="player_area" unique_id=526284325 groups=["Player"]]
+
+[node name="surfboard" type="ColorRect" parent="player_area/player" unique_id=525890605]
+offset_right = 479.0
+offset_bottom = 40.0
+color = Color(0.80784315, 0, 0.5372549, 1)
+
+[node name="CollisionShape" type="CollisionShape2D" parent="player_area/player" unique_id=1705390281]
 position = Vector2(299.5, -83)
 shape = SubResource("RectangleShape2D_qfmjg")
+
+[node name="surfer" type="ColorRect" parent="player_area/player" unique_id=1925161292]
+offset_left = 246.0
+offset_top = -195.0
+offset_right = 353.0
+offset_bottom = 21.0
+color = Color(0.9221518, 0.32839724, 0.3198729, 1)
 
 [node name="GUI" type="Node2D" parent="." unique_id=2085025584]
 z_index = 2
 script = ExtResource("2_1hwk1")
-
-[node name="ProgressBar" type="ProgressBar" parent="GUI" unique_id=762442916]
-offset_left = -245.0
-offset_top = -408.0
-offset_right = 250.0
-offset_bottom = -370.0
-show_percentage = false
 
 [node name="start_lbl" type="Label" parent="GUI" unique_id=1241091475]
 process_mode = 2
@@ -310,27 +320,20 @@ pivot_offset = Vector2(5, 72)
 [node name="meter_timer" type="Timer" parent="GUI/meter" unique_id=1944945440]
 
 [node name="timer_lbl" type="Label" parent="GUI" unique_id=156633336]
-offset_left = 829.0
-offset_top = -497.0
-offset_right = 921.0
-offset_bottom = -452.0
+offset_left = -13.0
+offset_top = -493.0
+offset_right = 79.0
+offset_bottom = -448.0
 theme_override_font_sizes/font_size = 32
-text = "60"
-
-[node name="board_timer" type="Timer" parent="GUI" unique_id=634100509]
+text = "tempo"
 
 [node name="game_timer" type="Timer" parent="GUI" unique_id=1628954056]
-wait_time = 60.0
 one_shot = true
 
 [node name="Camera2D" type="Camera2D" parent="GUI" unique_id=450337192]
 
 [connection signal="timeout" from="obstacles/rock_spawner/Timer" to="obstacles/rock_spawner" method="_on_timer_timeout"]
 [connection signal="body_entered" from="obstacles/drown" to="obstacles" method="_on_drown_body_entered"]
-[connection signal="body_shape_entered" from="obstacles/bird" to="obstacles/bird" method="_on_body_shape_entered"]
-[connection signal="body_entered" from="obstacles/rock" to="obstacles/rock" method="_on_body_entered"]
-[connection signal="body_shape_entered" from="obstacles/rock" to="obstacles/rock" method="_on_body_shape_entered"]
 [connection signal="timeout" from="obstacles/bird_spawner/Timer" to="obstacles/bird_spawner" method="_on_timer_timeout"]
 [connection signal="body_entered" from="obstacles/kill_clone" to="obstacles/kill_clone" method="_on_body_entered"]
 [connection signal="timeout" from="GUI/meter/meter_timer" to="GUI/meter" method="_on_meter_timer_timeout"]
-[connection signal="timeout" from="GUI/game_timer" to="." method="_on_game_timer_timeout"]

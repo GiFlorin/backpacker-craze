@@ -1,13 +1,11 @@
 extends Node2D
-@onready var progress_bar: ProgressBar = $GUI/ProgressBar
 @onready var start_lbl: Label = $GUI/start_lbl
 @onready var meter: Node2D = $GUI/meter
 @onready var timer_lbl: Label = $GUI/timer_lbl
 @onready var game_timer: Timer = $GUI/game_timer
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
-@onready var board_timer: Timer = $GUI/board_timer
 @onready var gui: Node2D = $GUI
-@onready var player: CharacterBody2D = $player
+@onready var player: CharacterBody2D = $player_area
 
 
 var game_stage = START
@@ -28,7 +26,6 @@ func _ready() -> void:
 	game_stage = START
 	start_lbl.visible = true
 	meter.visible = false
-	timer_lbl.visible = false
 	student_count = 0
 
 func _enter_tree() -> void:
@@ -51,13 +48,9 @@ func _process(delta: float) -> void:
 func new_round():
 	game_stage = 0
 	release_points = 0
-	progress_bar.visible = false
-	progress_bar.value = 0
 	if Input.is_action_just_pressed("Jump"):
 		game_stage = CATCH_WAVE
 		start_lbl.visible = false
-		if student_count == 0:
-			game_timer.start()
 
 func catch_wave():
 	meter.visible = true
@@ -80,11 +73,8 @@ func stay_on_wave():
 func new_student():
 	pass
 
-func _on_game_timer_timeout() -> void:
-	game_stage = RESULTS
-
 func end_round():
-	GameManager.past_job_points = release_points # TO DO
+	GameManager.past_job_points = release_points * gui.secs # TO DO
 	SceneTransition.change_scene("res://Assets/Features/Minigames/surf_minigame/results_surf.tscn")
 
 func die():

@@ -19,7 +19,6 @@ func _process(delta: float) -> void:
 func start():
 	active = true
 	timer.wait_time = randf_range(1, 4)
-	print('rock')
 	timer.start()
 
 func _on_timer_timeout() -> void:
