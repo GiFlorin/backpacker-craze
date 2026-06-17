@@ -30,3 +30,10 @@ color = Color(0.30180916, 0.2702483, 0.6244449, 1)
 
 [node name="TestNpc" parent="." unique_id=56760943 instance=ExtResource("3_uyqtq")]
 position = Vector2(553, -236)
+
+[node name="Label" type="Label" parent="." unique_id=605211775]
+offset_left = 183.0
+offset_top = -10.0
+offset_right = 236.0
+offset_bottom = 13.0
+text = "BEACH"

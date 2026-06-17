@@ -46,7 +46,6 @@ pivot_offset = Vector2(63, 68)
 texture_normal = ExtResource("2_ujw0f")
 
 [node name="Dest3" type="TextureButton" parent="destinations" unique_id=1666534791]
-visible = false
 offset_left = 469.0
 offset_top = -379.0
 offset_right = 597.0
@@ -66,10 +65,10 @@ texture_normal = ExtResource("2_ujw0f")
 
 [node name="Player" type="Sprite2D" parent="." unique_id=1975513944]
 texture_filter = 1
-position = Vector2(530, -321)
+position = Vector2(461, -391.00003)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("4_k2vqb")
-offset = Vector2(13.199974, -0.40000153)
+offset = Vector2(253.19998, 249.6)
 region_rect = Rect2(0, 0, 33.264, 37.5)
 
 [node name="Label" type="Label" parent="." unique_id=1611047020]

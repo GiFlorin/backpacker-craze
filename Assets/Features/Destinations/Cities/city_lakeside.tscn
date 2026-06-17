@@ -17,3 +17,10 @@ position_smoothing_enabled = true
 
 [node name="TestNpc" parent="." unique_id=56760943 instance=ExtResource("3_ljh3p")]
 position = Vector2(315, -122)
+
+[node name="Label" type="Label" parent="." unique_id=172422030]
+offset_left = 62.0
+offset_top = -140.0
+offset_right = 135.0
+offset_bottom = -117.0
+text = "LAKESIDE"

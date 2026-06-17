@@ -6,13 +6,7 @@ extends Control
 
 @onready var dialogue_box: Control = $dialogue_box
 
-const sprites_resources: Dictionary = {
-	'player': { # moods
-		'neutral':'resource',
-		'happy': 'resource',
-		'mad': 'resource'
-	}
-}
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

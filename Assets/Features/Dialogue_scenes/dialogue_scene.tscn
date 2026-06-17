@@ -1,13 +1,53 @@
 [gd_scene format=3 uid="uid://ctti1ly30v3p6"]
 
-[ext_resource type="Script" uid="uid://cu172khecoudj" path="res://Assets/Features/Destinations/Dialogue_scenes/dialogue_scene.gd" id="1_eoa6h"]
+[ext_resource type="Script" uid="uid://cu172khecoudj" path="res://Assets/Features/Dialogue_scenes/dialogue_scene.gd" id="1_eoa6h"]
 [ext_resource type="Texture2D" uid="uid://7q8nimwtc8d4" path="res://Assets/Shared/icon.svg" id="1_gbyjl"]
-[ext_resource type="Script" uid="uid://crvracta2l6s8" path="res://Assets/Features/Destinations/Dialogue_scenes/dialogue_box.gd" id="2_5bh3x"]
+[ext_resource type="Script" uid="uid://crvracta2l6s8" path="res://Assets/Features/Dialogue_scenes/dialogue_box.gd" id="2_5bh3x"]
+[ext_resource type="Script" uid="uid://4712y4oa5rpv" path="res://Assets/Features/Dialogue_scenes/npc_sprite.gd" id="2_rendj"]
+[ext_resource type="Texture2D" uid="uid://b27l4t4wq0ulj" path="res://Assets/Features/Dialogue_scenes/assets/marina/Annoyed.png" id="3_q7hxf"]
+
+[sub_resource type="Animation" id="Animation_q7hxf"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("npc_sprite:modulate:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_rendj"]
+resource_name = "npc_fade_out"
+length = 0.5
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("npc_sprite:modulate:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 0, -0.083333336, 0.16666667, 0, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_q7hxf"]
+_data = {
+&"RESET": SubResource("Animation_q7hxf"),
+&"npc_fade_out": SubResource("Animation_rendj")
+}
 
 [node name="dialogue_scene" type="Control" unique_id=2140424657]
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_eoa6h")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=782477340]
+libraries/ = SubResource("AnimationLibrary_q7hxf")
 
 [node name="backgrounds" type="Node2D" parent="." unique_id=24608802]
 
@@ -21,12 +61,18 @@ offset_bottom = 225.0
 color = Color(1, 0.29803923, 1, 1)
 
 [node name="npc_sprite" type="Node2D" parent="." unique_id=1349788039]
+script = ExtResource("2_rendj")
 
 [node name="ColorRect" type="ColorRect" parent="npc_sprite" unique_id=148049982]
 offset_left = 404.0
 offset_top = -416.0
 offset_right = 725.0
 offset_bottom = 185.0
+
+[node name="Sprite2D" type="Sprite2D" parent="npc_sprite" unique_id=2018280980]
+position = Vector2(558, -90)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("3_q7hxf")
 
 [node name="dialogue_box" type="Control" parent="." unique_id=2116486727]
 anchors_preset = 0
