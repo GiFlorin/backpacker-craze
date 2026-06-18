@@ -6,8 +6,6 @@ extends Control
 
 @onready var dialogue_box: Control = $dialogue_box
 
-
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	dialogue_box.change_name_to('bob')

@@ -8,17 +8,19 @@ var cur_mood = ''
 func _ready() -> void:
 	pass # Replace with function body.
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
 
-func change_character(new_character:String, mood:String):
-	$"../AnimationPlayer".play("npc_fade_out")
-	sprite.texture = sprites_resources[new_character][mood]
-	$"../AnimationPlayer".play_backwards("npc_fade_out")
-	cur_character = new_character
-	cur_mood = mood
+func update_character(new_character:String, mood:String):
+	if new_character == cur_character:
+		change_mood(mood)
+	else:
+		$"../AnimationPlayer".play("npc_fade_out")
+		sprite.texture = sprites_resources[new_character][mood]
+		$"../AnimationPlayer".play_backwards("npc_fade_out")
+		cur_character = new_character
+		cur_mood = mood
 
 func change_mood(new_mood:String):
 	sprite.texture = sprites_resources[cur_character][new_mood]
@@ -43,5 +45,21 @@ var sprites_resources: Dictionary = {
 		'smug': load("res://Assets/Features/Dialogue_scenes/assets/marina/smug.png"),
 		'smug_blushing': load("res://Assets/Features/Dialogue_scenes/assets/marina/smug_blushing.png"),
 		'worried': load("res://Assets/Features/Dialogue_scenes/assets/marina/worried.png")
+	},
+	'malcolm': {
+		'confident': load("res://Assets/Features/Dialogue_scenes/assets/malcolm/Confident.png"),
+		'disappointed': load("res://Assets/Features/Dialogue_scenes/assets/malcolm/Disappointed.png"),
+		'embarrassed': load("res://Assets/Features/Dialogue_scenes/assets/malcolm/Embarrassed.png"),
+		'excited': load("res://Assets/Features/Dialogue_scenes/assets/malcolm/Excited.png"),
+		'neutral': load("res://Assets/Features/Dialogue_scenes/assets/malcolm/Neutral.png"),
+		'surprised': load("res://Assets/Features/Dialogue_scenes/assets/malcolm/Surprised.png")
+	},
+	'malcolm_board': {
+		'confident': load("res://Assets/Features/Dialogue_scenes/assets/malcolm_board/Confident.png"),
+		'disappointed': load("res://Assets/Features/Dialogue_scenes/assets/malcolm_board/Disappointed.png"),
+		'embarrassed': load("res://Assets/Features/Dialogue_scenes/assets/malcolm_board/Embarrassed.png"),
+		'excited': load("res://Assets/Features/Dialogue_scenes/assets/malcolm_board/Excited.png"),
+		'neutral': load("res://Assets/Features/Dialogue_scenes/assets/malcolm_board/Neutral.png"),
+		'surprised': load("res://Assets/Features/Dialogue_scenes/assets/malcolm_board/Surprised.png")
 	}
 }
