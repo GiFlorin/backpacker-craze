@@ -1,0 +1,126 @@
+[gd_scene format=3 uid="uid://f7lop401vr4u"]
+
+[ext_resource type="Texture2D" uid="uid://dctqkcs8t7jnc" path="res://Assets/Core/map/mc_icon.png" id="1_2qn8x"]
+[ext_resource type="Script" uid="uid://du2a4r8v8dcg7" path="res://Assets/Features/Minigames/fishing_minigame/fishing_mini.gd" id="1_jkpb4"]
+[ext_resource type="PackedScene" uid="uid://8k5mlelcsen1" path="res://Assets/Features/Minigames/fishing_minigame/fish_shadow.tscn" id="3_1f44h"]
+
+[node name="FishingMini" type="Node2D" unique_id=1971225189]
+script = ExtResource("1_jkpb4")
+fish_scene = ExtResource("3_1f44h")
+
+[node name="bg" type="ColorRect" parent="." unique_id=1928492572]
+offset_left = -1077.0
+offset_top = -598.0
+offset_right = 1004.0
+offset_bottom = 602.0
+color = Color(0.8925756, 0.8368021, 0.2435526, 1)
+
+[node name="background" type="Sprite2D" parent="." unique_id=502847440]
+
+[node name="waterzone" type="Node2D" parent="." unique_id=1523805111]
+
+[node name="water" type="ColorRect" parent="waterzone" unique_id=1171975054]
+offset_top = -644.0
+offset_right = 1047.0
+offset_bottom = 644.0
+color = Color(0.35061142, 0.11615146, 0.85852313, 1)
+
+[node name="fish_container" type="Node2D" parent="waterzone" unique_id=666783151]
+
+[node name="FishShadow" parent="waterzone/fish_container" unique_id=1214951778 instance=ExtResource("3_1f44h")]
+
+[node name="cast_origin" type="Marker2D" parent="." unique_id=278715380]
+position = Vector2(-108, 4)
+
+[node name="player" type="Sprite2D" parent="cast_origin" unique_id=120481637]
+position = Vector2(-32, -17)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_2qn8x")
+
+[node name="cast_arrow" type="Node2D" parent="." unique_id=1317458476]
+
+[node name="arrow_sprite" type="Sprite2D" parent="cast_arrow" unique_id=1013708000]
+
+[node name="trajectory_line" type="Line2D" parent="cast_arrow" unique_id=2043124120]
+
+[node name="ColorRect" type="ColorRect" parent="cast_arrow" unique_id=1119199278]
+offset_top = 19.0
+offset_right = 267.0
+offset_bottom = 21.0
+color = Color(1, 0.3529412, 1, 1)
+
+[node name="float" type="Node2D" parent="." unique_id=1048951819]
+
+[node name="float_sprite" type="Sprite2D" parent="float" unique_id=578658996]
+
+[node name="ColorRect" type="ColorRect" parent="float/float_sprite" unique_id=573544320]
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0.7331234, 0.24736705, 0, 1)
+
+[node name="splash_particles" type="CPUParticles2D" parent="float" unique_id=1322143104]
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=712751750]
+
+[node name="casts_label" type="Label" parent="UI" unique_id=1210057667]
+offset_left = 699.0
+offset_top = -477.0
+offset_right = 878.0
+offset_bottom = -432.0
+theme_override_font_sizes/font_size = 32
+text = "Casts left: 3"
+
+[node name="score_label" type="Label" parent="UI" unique_id=916947588]
+offset_left = -890.0
+offset_top = -488.0
+offset_right = -769.0
+offset_bottom = -443.0
+theme_override_font_sizes/font_size = 32
+text = "Score: 7"
+
+[node name="phase_hint" type="Label" parent="UI" unique_id=144963189]
+offset_left = -68.0
+offset_top = -481.0
+offset_right = 73.0
+offset_bottom = -436.0
+theme_override_font_sizes/font_size = 32
+text = "Aim cast!"
+
+[node name="result_screen" type="Control" parent="UI" unique_id=261621963]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="background_panel" type="Panel" parent="UI/result_screen" unique_id=2088835120]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="title_label" type="Label" parent="UI/result_screen" unique_id=2004411706]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="score_display" type="Label" parent="UI/result_screen" unique_id=562399333]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="fish_caught" type="Label" parent="UI/result_screen" unique_id=1142446022]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="money_earned" type="Label" parent="UI/result_screen" unique_id=1000467917]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="continue_button" type="Button" parent="UI/result_screen" unique_id=343560454]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1199483190]

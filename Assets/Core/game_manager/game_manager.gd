@@ -12,7 +12,7 @@ var player_position: Vector2 = Vector2.ZERO
 enum {
 	BEACH,
 	LAKESIDE,
-	
+	JUNGLE_CITY
 }
 
 # NPC relationship levels 0-3

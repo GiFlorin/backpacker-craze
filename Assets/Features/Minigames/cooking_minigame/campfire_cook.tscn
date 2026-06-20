@@ -1,7 +1,0 @@
-[gd_scene format=3 uid="uid://cokskalwabmfw"]
-
-[node name="CampfireCook" type="Node2D" unique_id=972340623]
-
-[node name="bg" type="Node2D" parent="." unique_id=220906346]
-
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1290633953]

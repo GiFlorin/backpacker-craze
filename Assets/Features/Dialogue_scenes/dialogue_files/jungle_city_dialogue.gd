@@ -1,8 +1,5 @@
-extends Node2D
+extends Node
 
-@export var beachside_dialogue: JSON
-@export var lakeside_dialogue: Script
-@export var jungle_city_dialogue: Script
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
