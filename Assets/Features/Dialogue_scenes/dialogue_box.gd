@@ -3,8 +3,10 @@ extends Control
 @onready var character_name: RichTextLabel = $NinePatchRect/name
 @onready var text_field: RichTextLabel = $NinePatchRect/text
 @onready var typewriter_timer: Timer = $NinePatchRect/typewriter_timer
+@onready var choice_box: VBoxContainer = $NinePatchRect/choice_box
 
 var typewriter_skip = false
+signal choice_made(index: int)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -34,3 +36,26 @@ func typewriter_effect(len:int, node:Control, type_vel:float=15):
 		node.visible_characters = vis_char
 		await typewriter_timer.timeout
 	node.visible_characters = -1
+
+func set_options(options:Array):
+	choice_box.visible = true
+	var index := -1
+	for child in choice_box.get_children():
+		index += 1
+		if len(options) > index:
+			child.text = options[index]['text']
+		else:
+			child.hide()
+
+# ------------ choice option buttons -------------
+func _on_option_a_pressed() -> void:
+	choice_made.emit(0)
+
+func _on_option_b_pressed() -> void:
+	choice_made.emit(1)
+
+func _on_option_c_pressed() -> void:
+	choice_made.emit(2)
+
+func _on_option_d_pressed() -> void:
+	choice_made.emit(3)

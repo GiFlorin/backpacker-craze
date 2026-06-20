@@ -5,10 +5,10 @@
 [ext_resource type="Script" uid="uid://hdd5scfsx38" path="res://Assets/Features/Dialogue_scenes/dialogues.gd" id="2_axfue"]
 [ext_resource type="Script" uid="uid://d3ppmpsft1r1d" path="res://Assets/Features/Dialogue_scenes/player_sprite.gd" id="2_q7hxf"]
 [ext_resource type="Script" uid="uid://4712y4oa5rpv" path="res://Assets/Features/Dialogue_scenes/npc_sprite.gd" id="2_rendj"]
-[ext_resource type="JSON" path="res://Assets/Features/Dialogue_scenes/dialogue_files/comfy_summer_jam_dialogues_cleaned.json" id="3_pp5vb"]
 [ext_resource type="Texture2D" uid="uid://b27l4t4wq0ulj" path="res://Assets/Features/Dialogue_scenes/assets/marina/Annoyed.png" id="3_q7hxf"]
 [ext_resource type="Script" uid="uid://cbk3d46udi7ha" path="res://Assets/Features/Dialogue_scenes/dialogue_files/lakeside_dialogue.gd" id="4_b5wxp"]
 [ext_resource type="Script" uid="uid://cvuxt2dacht0x" path="res://Assets/Features/Dialogue_scenes/dialogue_files/jungle_city_dialogue.gd" id="5_xkb6u"]
+[ext_resource type="Script" uid="uid://qclge4x3inci" path="res://Assets/Features/Dialogue_scenes/backgrounds.gd" id="6_b5wxp"]
 [ext_resource type="Texture2D" uid="uid://bd4sdpuqi4dg7" path="res://Assets/Features/Dialogue_scenes/assets/MC/Amused.png" id="7_b5wxp"]
 
 [sub_resource type="Animation" id="Animation_q7hxf"]
@@ -22,6 +22,17 @@ tracks/0/loop_wrap = true
 tracks/0/keys = {
 "handle_modes": PackedInt32Array(0),
 "points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimationPlayer/scene_transition:color:a")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
 
@@ -40,10 +51,26 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.5)
 }
 
+[sub_resource type="Animation" id="Animation_pp5vb"]
+resource_name = "scene_transition_in"
+length = 0.5
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer/scene_transition:color:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, -0.083333336, -0.16666667, 0, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_q7hxf"]
 _data = {
 &"RESET": SubResource("Animation_q7hxf"),
-&"npc_fade_out": SubResource("Animation_rendj")
+&"npc_fade_out": SubResource("Animation_rendj"),
+&"scene_transition_in": SubResource("Animation_pp5vb")
 }
 
 [node name="dialogue_scene" type="Control" unique_id=2140424657]
@@ -54,13 +81,21 @@ script = ExtResource("1_eoa6h")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=782477340]
 libraries/ = SubResource("AnimationLibrary_q7hxf")
 
+[node name="scene_transition" type="ColorRect" parent="AnimationPlayer" unique_id=1624366174]
+offset_left = -1203.0
+offset_top = -584.0
+offset_right = 1062.0
+offset_bottom = 685.0
+mouse_filter = 2
+color = Color(0, 0, 0, 0)
+
 [node name="dialogues" type="Node2D" parent="." unique_id=187108511]
 script = ExtResource("2_axfue")
-beachside_dialogue = ExtResource("3_pp5vb")
 lakeside_dialogue = ExtResource("4_b5wxp")
 jungle_city_dialogue = ExtResource("5_xkb6u")
 
 [node name="backgrounds" type="Node2D" parent="." unique_id=24608802]
+script = ExtResource("6_b5wxp")
 
 [node name="Sprite2D" type="Sprite2D" parent="backgrounds" unique_id=1138044069]
 
@@ -126,10 +161,10 @@ wait_time = 0.5
 
 [node name="choice_box" type="VBoxContainer" parent="dialogue_box/NinePatchRect" unique_id=404986743]
 layout_mode = 0
-offset_left = 51.0
-offset_top = 143.0
-offset_right = 1762.0
-offset_bottom = 352.0
+offset_left = 53.0
+offset_top = 118.0
+offset_right = 1764.0
+offset_bottom = 327.0
 alignment = 1
 
 [node name="option_A" type="Button" parent="dialogue_box/NinePatchRect/choice_box" unique_id=1766015089]
@@ -142,4 +177,20 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 32
 text = "blablabla"
 
+[node name="option_C" type="Button" parent="dialogue_box/NinePatchRect/choice_box" unique_id=1073686486]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "blablabla"
+
+[node name="option_D" type="Button" parent="dialogue_box/NinePatchRect/choice_box" unique_id=468425414]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "blablabla"
+
 [node name="Camera2D" type="Camera2D" parent="." unique_id=932320669]
+
+[connection signal="choice_made" from="dialogue_box" to="." method="_on_dialogue_box_choice_made"]
+[connection signal="pressed" from="dialogue_box/NinePatchRect/choice_box/option_A" to="dialogue_box" method="_on_option_a_pressed"]
+[connection signal="pressed" from="dialogue_box/NinePatchRect/choice_box/option_B" to="dialogue_box" method="_on_option_b_pressed"]
+[connection signal="pressed" from="dialogue_box/NinePatchRect/choice_box/option_C" to="dialogue_box" method="_on_option_c_pressed"]
+[connection signal="pressed" from="dialogue_box/NinePatchRect/choice_box/option_D" to="dialogue_box" method="_on_option_d_pressed"]

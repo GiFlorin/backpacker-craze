@@ -16,18 +16,27 @@ func update_character(new_character:String, mood:String):
 	if new_character == cur_character:
 		change_mood(mood)
 	else:
-		$"../AnimationPlayer".play("npc_fade_out")
-		sprite.texture = sprites_resources[new_character][mood]
-		$"../AnimationPlayer".play_backwards("npc_fade_out")
-		cur_character = new_character
-		cur_mood = mood
+		if sprites_resources.has(new_character):
+			if sprites_resources[new_character].has(mood):
+				$"../AnimationPlayer".play("npc_fade_out")
+				sprite.texture = sprites_resources[new_character][mood]
+				$"../AnimationPlayer".play_backwards("npc_fade_out")
+				cur_character = new_character
+				cur_mood = mood
+			else:
+				print('%s mood invalid' % mood)
+		else:
+			print('%s character invalid' % new_character)
 
 func change_mood(new_mood:String):
-	sprite.texture = sprites_resources[cur_character][new_mood]
-	cur_mood = new_mood
+	if sprites_resources[cur_character].has(new_mood):
+		sprite.texture = sprites_resources[cur_character][new_mood]
+		cur_mood = new_mood
+	else:
+		print('%s mood invalid' % new_mood)
 
 var sprites_resources: Dictionary = {
-	'marina': { # moods
+	'Marina': { # moods
 		'annoyed': load("res://Assets/Features/Dialogue_scenes/assets/marina/Annoyed.png"),
 		'blushing': load("res://Assets/Features/Dialogue_scenes/assets/marina/Blushing.png"),
 		'dreamy': load("res://Assets/Features/Dialogue_scenes/assets/marina/Dreamy.png"),
@@ -46,7 +55,7 @@ var sprites_resources: Dictionary = {
 		'smug_blushing': load("res://Assets/Features/Dialogue_scenes/assets/marina/smug_blushing.png"),
 		'worried': load("res://Assets/Features/Dialogue_scenes/assets/marina/worried.png")
 	},
-	'malcolm': {
+	'Malcolm': {
 		'confident': load("res://Assets/Features/Dialogue_scenes/assets/malcolm/Confident.png"),
 		'disappointed': load("res://Assets/Features/Dialogue_scenes/assets/malcolm/Disappointed.png"),
 		'embarrassed': load("res://Assets/Features/Dialogue_scenes/assets/malcolm/Embarrassed.png"),
@@ -54,7 +63,7 @@ var sprites_resources: Dictionary = {
 		'neutral': load("res://Assets/Features/Dialogue_scenes/assets/malcolm/Neutral.png"),
 		'surprised': load("res://Assets/Features/Dialogue_scenes/assets/malcolm/Surprised.png")
 	},
-	'malcolm_board': {
+	'Malcolm_board': {
 		'confident': load("res://Assets/Features/Dialogue_scenes/assets/malcolm_board/Confident.png"),
 		'disappointed': load("res://Assets/Features/Dialogue_scenes/assets/malcolm_board/Disappointed.png"),
 		'embarrassed': load("res://Assets/Features/Dialogue_scenes/assets/malcolm_board/Embarrassed.png"),
