@@ -63,11 +63,10 @@ func get_scene_data():
 
 func advance():
 	while true:
-		if data['scenes'][_scene_index]['dialogue'][_index]['next'] == 'end_dest':
-			advance_scene()
-		else: _index += 1
-		
 		if len(data['scenes'][_scene_index]['dialogue']) > _index:
+			if data['scenes'][_scene_index]['dialogue'][_index]['next'] == 'end_scene':
+				advance_scene()
+			else: _index += 1
 			var dialogue_data = data['scenes'][_scene_index]['dialogue'][_index]
 			
 			# if the condition is in the available conditions dict
@@ -84,9 +83,12 @@ func advance():
 func advance_scene():
 	_scene_index += 1
 	_index = 0
+	get_tree().paused = true
 	$"../AnimationPlayer".play("scene_transition_in")
 	await get_tree().create_timer(0.5).timeout
+	$"../backgrounds".set_background(get_scene_data()['background'])
 	$"../AnimationPlayer".play_backwards("scene_transition_in")
+	get_tree().paused = false
 	
-	if data['scenes'][_scene_index]['dialogue'][_index]['next'] == 'end_scene':
+	if data['scenes'][_scene_index]['dialogue'][_index]['next'] == 'end_dest':
 		pass # TODO next dest

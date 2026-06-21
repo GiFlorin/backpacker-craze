@@ -6,6 +6,7 @@ extends Control
 @onready var choice_box: VBoxContainer = $NinePatchRect/choice_box
 
 var typewriter_skip = false
+var ready_to_go = false
 signal choice_made(index: int)
 
 # Called when the node enters the scene tree for the first time.
@@ -14,6 +15,9 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	pass
+
+func _input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("Jump"):
 		typewriter_skip = true
 
@@ -23,6 +27,7 @@ func change_name_to(text:String, type_vel:float=6):
 
 func change_text_to(text:String, type_vel:float=15):
 	text_field.text = str(text)
+	ready_to_go = false
 	typewriter_effect(len(text), text_field, type_vel)
 
 func typewriter_effect(len:int, node:Control, type_vel:float=15):
@@ -36,6 +41,8 @@ func typewriter_effect(len:int, node:Control, type_vel:float=15):
 		node.visible_characters = vis_char
 		await typewriter_timer.timeout
 	node.visible_characters = -1
+	if typewriter_skip and node.visible_characters == -1:
+		ready_to_go = true
 
 func set_options(options:Array):
 	choice_box.visible = true

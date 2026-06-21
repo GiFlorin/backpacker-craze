@@ -25,8 +25,10 @@ func _process(delta: float) -> void:
 	pass
 
 func _input(event: InputEvent) -> void:
-	if Input.is_action_just_pressed('Jump') and choice_box.visible == false:
-		next_dialogue()
+	if Input.is_action_just_pressed('Jump'):
+		if !choice_box.visible and dialogue_box.ready_to_go:
+			var readytg = dialogue_box.ready_to_go
+			next_dialogue()
 
 func set_dialogue_visual(data: Dictionary):
 	dialogue_box.change_name_to(data['speaker'])
