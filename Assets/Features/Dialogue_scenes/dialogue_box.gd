@@ -23,7 +23,7 @@ func _input(event: InputEvent) -> void:
 
 func change_name_to(text:String, type_vel:float=6):
 	character_name.text = str(text)
-	typewriter_effect(len(text), character_name, type_vel)
+	# typewriter_effect(len(text), character_name, type_vel)
 
 func change_text_to(text:String, type_vel:float=15):
 	text_field.text = str(text)

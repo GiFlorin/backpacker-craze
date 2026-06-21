@@ -1,10 +1,11 @@
 {
-  "destination": "Beach",
+  "destination": "Beachside",
   "scenes": [
 	{
 	  "id": "scene_1",
 	  "title": "Beachside landing / encounter with Marina",
 	  "background": "A",
+	  "song": "",
 	  "npcs_present": [
         "Marina"
 	  ],
@@ -191,6 +192,7 @@
 	  "id": "scene_2",
 	  "title": "Beachside tour",
 	  "background": "B",
+	  "song": "",
 	  "npcs_present": [
         "Marina"
 	  ],
@@ -399,6 +401,7 @@
 	  "id": "scene_3",
 	  "title": "Bet / encounter with Malcolm",
 	  "background": "",
+	  "song": "",
 	  "npcs_present": [
 		"Marina",
         "Malcolm"
@@ -757,6 +760,7 @@
 	  "id": "scene_4",
 	  "title": "Encounter with the con-artist",
 	  "background": "A",
+	  "song": "",
 	  "npcs_present": [
         "Con-artist"
 	  ],
@@ -965,6 +969,7 @@
 	  "id": "scene_5",
 	  "title": "Restaurant",
 	  "background": "D",
+	  "song": "",
 	  "npcs_present": [
 		"Marina",
         "Malcolm"

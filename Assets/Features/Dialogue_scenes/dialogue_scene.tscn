@@ -105,16 +105,16 @@ position = Vector2(-717, 33)
 script = ExtResource("2_q7hxf")
 
 [node name="Sprite2D" type="Sprite2D" parent="player_sprite" unique_id=1397011702]
-position = Vector2(157, -89)
-scale = Vector2(0.25, 0.25)
+position = Vector2(230, -8.999992)
+scale = Vector2(0.35, 0.35)
 texture = ExtResource("7_b5wxp")
 
 [node name="npc_sprite" type="Node2D" parent="." unique_id=1349788039]
 script = ExtResource("2_rendj")
 
 [node name="Sprite2D" type="Sprite2D" parent="npc_sprite" unique_id=2018280980]
-position = Vector2(558, -90)
-scale = Vector2(0.25, 0.25)
+position = Vector2(554, 13.999985)
+scale = Vector2(0.35, 0.35)
 texture = ExtResource("3_q7hxf")
 
 [node name="dialogue_box" type="Control" parent="." unique_id=2116486727]
@@ -134,7 +134,7 @@ offset_bottom = 491.0
 layout_mode = 0
 offset_right = 1791.0
 offset_bottom = 376.0
-color = Color(0, 0.45825034, 0.45933002, 1)
+color = Color(0, 0, 0, 0.57254905)
 
 [node name="name" type="RichTextLabel" parent="dialogue_box/NinePatchRect" unique_id=492383467]
 layout_mode = 1
@@ -161,15 +161,18 @@ text = "hello! blablablskndviboswiwydbcipadcpiauydbviçbwsviuyhsbpviabibdbvd"
 wait_time = 0.5
 
 [node name="choice_box" type="VBoxContainer" parent="dialogue_box/NinePatchRect" unique_id=404986743]
-layout_mode = 0
-offset_left = 53.0
-offset_top = 118.0
-offset_right = 1764.0
-offset_bottom = 327.0
+layout_mode = 1
+offset_left = 478.0
+offset_top = -426.0
+offset_right = 1351.0
+offset_bottom = -78.0
+theme_override_constants/separation = 45
 alignment = 1
 
 [node name="option_A" type="Button" parent="dialogue_box/NinePatchRect/choice_box" unique_id=1766015089]
+custom_minimum_size = Vector2(1.485, 0)
 layout_mode = 2
+size_flags_stretch_ratio = 1.22
 theme_override_font_sizes/font_size = 32
 text = "blablabla"
 
@@ -189,6 +192,7 @@ theme_override_font_sizes/font_size = 32
 text = "blablabla"
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=932320669]
+zoom = Vector2(0.6, 0.6)
 
 [connection signal="choice_made" from="dialogue_box" to="." method="_on_dialogue_box_choice_made"]
 [connection signal="pressed" from="dialogue_box/NinePatchRect/choice_box/option_A" to="dialogue_box" method="_on_option_a_pressed"]

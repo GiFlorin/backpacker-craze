@@ -26,11 +26,6 @@ SceneTransition="*uid://x4ksrb34p7a1"
 PauseMenu="*uid://ch85i7487tecd"
 DialogueManager="*uid://ca6drg3afmnaj"
 
-[display]
-
-window/size/viewport_width=1920
-window/size/viewport_height=1080
-
 [editor]
 
 movie_writer/movie_file="C:/Users/User/OneDrive/Área de Trabalho/projetoss/backpacker-craze/Assets/recording.avi"

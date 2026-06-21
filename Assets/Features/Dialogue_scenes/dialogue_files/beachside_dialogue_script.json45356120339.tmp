@@ -1,0 +1,1278 @@
+{
+  "destination": "Beachside",
+  "scenes": [
+	{
+	  "id": "scene_1",
+	  "title": "Beachside landing / encounter with Marina",
+	  "background": "A",
+	  "npcs_present": [
+        "Marina"
+	  ],
+	  "dialogue": [
+		{
+		  "id": "line_001",
+		  "type": "narrator",
+		  "speaker": "Narrator",
+		  "text": "The player arrives at Beachside, too distracted by the scenery to notice a woman carrying multiple shopping bags.",
+		  "mood": "neutral",
+		  "condition": "scene_start",
+		  "cg": "bump",
+		  "choices": [],
+		  "next": "line_002"
+		},
+		{
+		  "id": "line_002",
+		  "type": "action",
+		  "speaker": "Narrator",
+		  "text": "The shopping bags fly out of Marina's hands.",
+		  "mood": "annoyed",
+		  "condition": "after_bump",
+		  "cg": "bump",
+		  "choices": [],
+		  "next": "line_003"
+		},
+		{
+		  "id": "line_003",
+		  "type": "choices",
+		  "speaker": "Marina",
+		  "text": "You have to help me pick all this up. I just got a manicure, and I am not ruining it.",
+		  "mood": "complaining",
+		  "condition": "after_bump",
+		  "cg": null,
+		  "choices": [
+			{
+			  "id": "choice_A",
+			  "text": "If you insist.",
+			  "consequence_text": "Marina is shocked, impressed, and secretly flattered. She frames the accident as the player's fault, but in a playful way."
+			},
+			{
+			  "id": "choice_B",
+			  "text": "We’re both at fault here.",
+			  "consequence_text": "Marina is embarrassed and defensive, but the player’s apology softens her and makes her more willing to help."
+			}
+		  ],
+		  "next": "line_004"
+		},
+		{
+		  "id": "line_004",
+		  "type": "thought",
+		  "speaker": "Marina",
+		  "text": "Now that I think about it, they are totally my type!",
+		  "mood": "shocked",
+		  "condition": "choice_A_selected",
+		  "cg": null,
+		  "choices": [],
+		  "next": "line_005A"
+		},
+		{
+		  "id": "line_005A",
+		  "type": "dialogue",
+		  "speaker": "Marina",
+		  "text": "As you should! It was totally 100% your fault and not because I wasn’t also looking, hmph!",
+		  "mood": "smug",
+		  "condition": "choice_A_selected",
+		  "cg": null,
+		  "choices": [],
+		  "next": "line_006"
+		},
+		{
+		  "id": "line_004B",
+		  "type": "dialogue",
+		  "speaker": "Marina",
+		  "text": "…Huh? O. M. Gosh! I can’t believe you’re putting the blame on me! Whatever, guess I’ll do it myself…",
+		  "mood": "embarrassed",
+		  "condition": "choice_B_selected",
+		  "cg": null,
+		  "choices": [],
+		  "next": "line_006"
+		},
+		{
+		  "id": "line_006",
+		  "type": "narrator",
+		  "speaker": "Narrator",
+		  "text": "The player is reminded why they came here in the first place. Marina seems like a local, and could probably provide a tour or even a job.",
+		  "mood": "neutral",
+		  "condition": "after_choice_resolution",
+		  "cg": null,
+		  "choices": [],
+		  "next": "line_007"
+		},
+		{
+		  "id": "line_007",
+		  "type": "dialogue",
+		  "speaker": "Marina",
+		  "text": "Hmm… and I guess I could give you a tour. I know the best places to shop and the best views for pictures! Also, I totally think we would look cute walking side-by-side…",
+		  "mood": "smug_blushing",
+		  "condition": "choice_B_selected",
+		  "cg": null,
+		  "choices": [],
+		  "next": "line_008"
+		},
+		{
+		  "id": "line_008",
+		  "type": "dialogue",
+		  "speaker": "Player",
+		  "text": "What was that?",
+		  "mood": "confused",
+		  "condition": "choice_B_selected",
+		  "cg": null,
+		  "choices": [],
+		  "next": "line_009"
+		},
+		{
+		  "id": "line_009",
+		  "type": "dialogue",
+		  "speaker": "Marina",
+		  "text": "Nothing!",
+		  "mood": "excited_blushing",
+		  "condition": "choice_B_selected",
+		  "cg": null,
+		  "choices": [],
+		  "next": "line_010"
+		},
+		{
+		  "id": "line_010",
+		  "type": "dialogue",
+		  "speaker": "Marina",
+		  "text": "I need a name to refer to you since you’re carrying my bags! My name is Marina. Beautiful, isn’t it?",
+		  "mood": "proud",
+		  "condition": "after_name_prompt",
+		  "cg": null,
+		  "choices": [],
+		  "next": "name_input_player"
+		},
+		{
+		  "id": "name_input_player",
+		  "type": "mechanic",
+		  "speaker": "System",
+		  "text": "",
+		  "mood": "neutral",
+		  "condition": "player_name_not_set",
+		  "cg": null,
+		  "choices": [],
+		  "next": "line_011"
+		},
+		{
+		  "id": "line_011",
+		  "type": "dialogue",
+		  "speaker": "Marina",
+		  "text": "What a cute name!",
+		  "mood": "blushing",
+		  "condition": "player_name_set",
+		  "cg": null,
+		  "choices": [],
+		  "next": "line_012"
+		},
+		{
+		  "id": "line_012",
+		  "type": "dialogue",
+		  "speaker": "Marina",
+		  "text": "Not as great as mine, obviously, but it’s alright I guess.",
+		  "mood": "smug",
+		  "condition": "player_name_set",
+		  "cg": null,
+		  "choices": [],
+		  "next": "line_013"
+		},
+		{
+		  "id": "line_013",
+		  "type": "dialogue",
+		  "speaker": "Marina",
+		  "text": "C’mon! I’ll show you my favourite shops around the area.",
+		  "mood": "excited",
+		  "condition": "player_name_set",
+		  "cg": null,
+		  "choices": [],
+		  "next": "end_scene"
+		}
+	  ]
+	},
+	{
+	  "id": "scene_2",
+	  "title": "Beachside tour",
+	  "background": "B",
+	  "npcs_present": [
+        "Marina"
+	  ],
+	  "dialogue": [
+		{
+		  "id": "scene_2_start",
+		  "type": "narrator",
+		  "speaker": "Narrator",
+		  "text": "Marina excitedly lists every shop as the pair stroll through the shopping district. The player enjoys the sun and the sound of someone talking after a long journey.",
+		  "mood": "calm",
+		  "condition": "scene_2_enter",
+		  "cg": null,
+		  "choices": [],
+		  "next": "line_014"
+		},
+		{
+		  "id": "line_014",
+		  "type": "dialogue",
+		  "speaker": "Marina",
+		  "text": "—and that over there is where I got my cute bikini, which is what I’m wearing now, teehee!",
+		  "mood": "smug",
+		  "condition": "touring_shops",
+		  "cg": null,
+		  "choices": [],
+		  "next": "line_015"
+		},
+		{
+		  "id": "line_015",
+		  "type": "thought",
+		  "speaker": "Marina",
+		  "text": "Did I talk too much? I hope I’m not boring Y/N. Right, they were here for something. Maybe I should ask about that…",
+		  "mood": "flustered",
+		  "condition": "touring_shops",
+		  "cg": null,
+		  "choices": [],
+		  "next": "line_016"
+		},
+		{
+		  "id": "line_016",
+		  "type": "choices",
+		  "speaker": "Marina",
+		  "text": "Ahem— so what is your deal for coming here exactly? Not that I want to know or anything.",
+		  "mood": "neutral",
+		  "condition": "tour_complete",
+		  "cg": null,
+		  "choices": [
+			{
+			  "id": "choice_C",
+			  "text": "I underestimated my supplies…",
+			  "consequence_text": "Marina relates to the problem immediately and sees the situation as a sign of fate."
+			},
+			{
+			  "id": "choice_D",
+			  "text": "I got robbed…",
+			  "consequence_text": "Marina sympathizes dramatically and then gets interrupted by a coworker, which exposes her social status and opens the way to a job lead."
+			}
+		  ],
+		  "next": "line_017"
+		},
+		{
+		  "id": "line_017C",
+		  "type": "dialogue",
+		  "speaker": "Player",
+		  "text": "I wanted to backpack around (island name), but I quickly realized a week worth of essentials wasn’t enough. I met a guy on the way here selling the equipment I needed but the prices were way too high. I saw that (beachside location name) was nearby so I was hoping to find some odd jobs I can do around here. That way I can save money and make my way back home.",
+		  "mood": "neutral",
+		  "condition": "choice_C_selected",
+		  "cg": null,
+		  "choices": [],
+		  "next": "line_018C"
+		},
+		{
+		  "id": "line_018C",
+		  "type": "dialogue",
+		  "speaker": "Marina",
+		  "text": "Underestimating your essentials? That’s like me underestimating my expenses! W-we have so much in common, this must be fate!",
+		  "mood": "flustered",
+		  "condition": "choice_C_selected",
+		  "cg": null,
+		  "choices": [],
+		  "next": "end_scene"
+		},
+		{
+		  "id": "line_017D",
+		  "type": "dialogue",
+		  "speaker": "Player",
+		  "text": "Initially I only intended to backpack for a week, but I got carried away and kept going a little further. I arrived at (beachside location name) in the dead of night and slept on a bench. I was half unconscious, but I think I saw a seagull— no, more than that— steal some of my belongings. I was hoping to find some odd jobs I can do around here to save up some money to go home.",
+		  "mood": "nervous",
+		  "condition": "choice_D_selected",
+		  "cg": "MC asleep on a bench",
+		  "choices": [],
+		  "next": "line_018D"
+		},
+		{
+		  "id": "line_018D",
+		  "type": "dialogue",
+		  "speaker": "Marina",
+		  "text": "O.M.G! You poor thing, I can’t believe those seagulls did that to you… and thank goodness they did because they basically brought you to me.",
+		  "mood": "shocked",
+		  "condition": "choice_D_selected",
+		  "cg": "seagull stealing the MC's belongings",
+		  "choices": [],
+		  "next": "line_019D"
+		},
+		{
+		  "id": "line_019D",
+		  "type": "dialogue",
+		  "speaker": "Player",
+		  "text": "Huh?",
+		  "mood": "concerned",
+		  "condition": "choice_D_selected",
+		  "cg": null,
+		  "choices": [],
+		  "next": "line_020D"
+		},
+		{
+		  "id": "line_020D",
+		  "type": "dialogue",
+		  "speaker": "Marina",
+		  "text": "Don’t worry about it!",
+		  "mood": "proud",
+		  "condition": "choice_D_selected",
+		  "cg": null,
+		  "choices": [],
+		  "next": "line_021D"
+		},
+		{
+		  "id": "line_021D",
+		  "type": "dialogue",
+		  "speaker": "Marina",
+		  "text": "Anyway, lucky for me I don’t need to worry about my expenses or losing my belongings. I’ve never lifted a finger because I get my funds from my father who—",
+		  "mood": "smug",
+		  "condition": "choice_D_selected",
+		  "cg": null,
+		  "choices": [],
+		  "next": "coworker_interrupt"
+		},
+		{
+		  "id": "coworker_interrupt",
+		  "type": "dialogue",
+		  "speaker": "Co-worker",
+		  "text": "Girl, it was so funny bumping into you! See you on your next shift this Saturday!",
+		  "mood": "off_screen",
+		  "condition": "choice_D_selected",
+		  "cg": "Marina getting interrupted by a coworker at an awkward moment",
+		  "choices": [],
+		  "next": "line_022D"
+		},
+		{
+		  "id": "line_022D",
+		  "type": "dialogue",
+		  "speaker": "Marina",
+		  "text": "Yeah, see you…",
+		  "mood": "embarrassed",
+		  "condition": "choice_D_selected",
+		  "cg": null,
+		  "choices": [],
+		  "next": "line_023D"
+		},
+		{
+		  "id": "line_023D",
+		  "type": "thought",
+		  "speaker": "Marina",
+		  "text": "That just totally ruined my rich and classy persona just now!",
+		  "mood": "flustered",
+		  "condition": "choice_D_selected",
+		  "cg": null,
+		  "choices": [],
+		  "next": "line_024"
+		},
+		{
+		  "id": "line_024",
+		  "type": "dialogue",
+		  "speaker": "Marina",
+		  "text": "Y-you wanted to know what odd jobs there are around here? Well, you’re actually in luck and should be grateful for bumping into me, because I know exactly where I can get you one!",
+		  "mood": "flustered",
+		  "condition": "after_branch_resolution",
+		  "cg": null,
+		  "choices": [],
+		  "next": "line_025"
+		},
+		{
+		  "id": "line_025",
+		  "type": "dialogue",
+		  "speaker": "Marina",
+		  "text": "My brother runs a surf shop near the beach area. He’s been complaining about having too much litter on the sand. He says it’s bad for business because less people are willing to be on the beach now, or whatever.",
+		  "mood": "excited",
+		  "condition": "after_branch_resolution",
+		  "cg": null,
+		  "choices": [],
+		  "next": "line_026"
+		},
+		{
+		  "id": "line_026",
+		  "type": "dialogue",
+		  "speaker": "Player",
+		  "text": "That’s perfect! Let’s head there right now.",
+		  "mood": "happy_laughing",
+		  "condition": "after_branch_resolution",
+		  "cg": null,
+		  "choices": [],
+		  "next": "end_scene"
+		}
+	  ]
+	},
+	{
+	  "id": "scene_3",
+	  "title": "Bet / encounter with Malcolm",
+	  "background": "",
+	  "npcs_present": [
+		"Marina",
+        "Malcolm"
+	  ],
+	  "dialogue": [
+		{
+		  "id": "scene_3_start",
+		  "type": "narrator",
+		  "speaker": "Narrator",
+		  "text": "The player and Marina return near the end of the shopping district. The boardwalk creaks under their steps, and the sound of waves becomes clearer as they approach the beach.",
+		  "mood": "calm",
+		  "condition": "scene_3_enter",
+		  "cg": null,
+		  "choices": [],
+		  "next": "line_027"
+		},
+		{
+		  "id": "line_027",
+		  "type": "dialogue",
+		  "speaker": "Marina",
+		  "text": "Hmph, I don’t feel like putting in the energy to walk to him. I’ll just call him over.",
+		  "mood": "annoyed",
+		  "condition": "scene_3_enter",
+		  "cg": null,
+		  "choices": [],
+		  "next": "line_028"
+		},
+		{
+		  "id": "line_028",
+		  "type": "dialogue",
+		  "speaker": "Marina",
+		  "text": "MAAAALLCOOOLLMM!!! COME OVER HERE RIGHT NOW, I HAVE SOMEONE YOU SHOULD MEET!",
+		  "mood": "shouting",
+		  "condition": "scene_3_enter",
+		  "cg": null,
+		  "choices": [],
+		  "next": "line_029"
+		},
+		{
+		  "id": "line_029",
+		  "type": "thought",
+		  "speaker": "Player",
+		  "text": "Who are you and where have you taken Marina?",
+		  "mood": "panicking",
+		  "condition": "malcolm_approaches",
+		  "cg": null,
+		  "choices": [],
+		  "next": "line_030"
+		},
+		{
+		  "id": "line_030",
+		  "type": "dialogue",
+		  "speaker": "Malcolm",
+		  "text": "Yooo you called?",
+		  "mood": "confident",
+		  "condition": "malcolm_approaches",
+		  "cg": null,
+		  "choices": [],
+		  "next": "line_031"
+		},
+		{
+		  "id": "line_031",
+		  "type": "dialogue",
+		  "speaker": "Malcolm",
+		  "text": "Hey dude, what’s good? What brings you here at (beachside location name)? I’m Malcolm by the way, if you couldn’t tell by my sister’s shouting.",
+		  "mood": "confident",
+		  "condition": "malcolm_intro",
+		  "cg": null,
+		  "choices": [],
+		  "next": "line_032"
+		},
+		{
+		  "id": "line_032",
+		  "type": "dialogue",
+		  "speaker": "Player",
+		  "text": "I packed too little for my backpacking trip, so I kind of need some money for my journey home.",
+		  "mood": "embarrassed",
+		  "condition": "player_choice_C",
+		  "cg": null,
+		  "choices": [],
+		  "next": "line_034"
+		},
+		{
+		  "id": "line_033",
+		  "type": "dialogue",
+		  "speaker": "Player",
+		  "text": "I think I might’ve gotten robbed by some seagulls while I was backpacking. I don’t think I can go home until I earn some money back.",
+		  "mood": "embarrassed",
+		  "condition": "player_choice_D",
+		  "cg": null,
+		  "choices": [],
+		  "next": "line_034"
+		},
+		{
+		  "id": "line_034",
+		  "type": "dialogue",
+		  "speaker": "Malcolm",
+		  "text": "Gosh dude, what a total bummer!",
+		  "mood": "disappointed_sad",
+		  "condition": "player_explains_problem",
+		  "cg": null,
+		  "choices": [],
+		  "next": "line_035"
+		},
+		{
+		  "id": "line_035",
+		  "type": "dialogue",
+		  "speaker": "Malcolm",
+		  "text": "Man, if you came down here just a little bit earlier I would’ve paid you to clean the beach. Some guy was nice enough to volunteer and clean it for me.",
+		  "mood": "surprised",
+		  "condition": "player_explains_problem",
+		  "cg": null,
+		  "choices": [],
+		  "next": "line_036"
+		},
+		{
+		  "id": "line_036",
+		  "type": "choices",
+		  "speaker": "Malcolm",
+		  "text": "Dope! The waves are looking cranking! Tell you what, if you beat me in this surfing challenge I’ll give ya twenty dollars, how’s that sound?",
+		  "mood": "excited",
+		  "condition": "player_explains_problem",
+		  "cg": null,
+		  "choices": [
+			{
+			  "id": "choice_G",
+			  "text": "Alright, bet!",
+			  "consequence_text": "The surfing challenge begins. Marina secretly admires the player’s courage."
+			}
+		  ],
+		  "next": "line_037"
+		},
+		{
+		  "id": "line_037",
+		  "type": "thought",
+		  "speaker": "Marina",
+		  "text": "Y/N is just so brave, I’m totally crushing on them!",
+		  "mood": "dreamy",
+		  "condition": "choice_G_selected",
+		  "cg": "Marina secretly daydreaming about the MC",
+		  "choices": [],
+		  "next": "line_038"
+		},
+		{
+		  "id": "line_038",
+		  "type": "dialogue",
+		  "speaker": "Malcolm",
+		  "text": "That’s the spirit, now you got me all amped up! Don’t think I’ll go easy on you just because you’re new.",
+		  "mood": "excited",
+		  "condition": "choice_G_selected",
+		  "cg": null,
+		  "choices": [],
+		  "next": "line_039"
+		},
+		{
+		  "id": "line_039",
+		  "type": "narrator",
+		  "speaker": "Narrator",
+		  "text": "Malcolm challenges the player to ride a plunging wave, often called a barrel. It is dangerous, but the player manages to pull it off.",
+		  "mood": "intense",
+		  "condition": "minigame_start",
+		  "cg": null,
+		  "choices": [],
+		  "next": "line_040"
+		},
+		{
+		  "id": "line_040",
+		  "type": "dialogue",
+		  "speaker": "Malcolm",
+		  "text": "That was hella dope, dude! You're a natural at this. My sister is a total Barney, she always ends up getting rag dolled by the waves.",
+		  "mood": "excited",
+		  "condition": "minigame_complete",
+		  "cg": null,
+		  "choices": [],
+		  "next": "line_041"
+		},
+		{
+		  "id": "line_041",
+		  "type": "dialogue",
+		  "speaker": "Marina",
+		  "text": "Ugh, no I don’t! S-stop making me look bad in front of our guest!",
+		  "mood": "flustered",
+		  "condition": "minigame_complete",
+		  "cg": null,
+		  "choices": [],
+		  "next": "line_042"
+		},
+		{
+		  "id": "line_042",
+		  "type": "dialogue",
+		  "speaker": "Malcolm",
+		  "text": "AHAHA! Oh right — Here’s the twenty dollars I promised. Put some good use to it, m’kay?",
+		  "mood": "excited",
+		  "condition": "minigame_complete",
+		  "cg": null,
+		  "choices": [],
+		  "next": "line_043"
+		},
+		{
+		  "id": "line_043",
+		  "type": "dialogue",
+		  "speaker": "Kid",
+		  "text": "Mr. Malcolm! I’m ready for today’s surf lesson, c’mon!",
+		  "mood": "off_screen",
+		  "condition": "after_reward",
+		  "cg": null,
+		  "choices": [],
+		  "next": "line_044"
+		},
+		{
+		  "id": "line_044",
+		  "type": "dialogue",
+		  "speaker": "Malcolm",
+		  "text": "S’up lil’ dude! I see you’re all geared up. Actually, today is special. I have a friend over here who is just as good as me ready to teach you.",
+		  "mood": "confident",
+		  "condition": "after_reward",
+		  "cg": null,
+		  "choices": [],
+		  "next": "line_045"
+		},
+		{
+		  "id": "line_045",
+		  "type": "action",
+		  "speaker": "Narrator",
+		  "text": "Malcolm winks at the player.",
+		  "mood": "playful",
+		  "condition": "after_reward",
+		  "cg": null,
+		  "choices": [],
+		  "next": "line_046"
+		},
+		{
+		  "id": "line_046",
+		  "type": "dialogue",
+		  "speaker": "Player",
+		  "text": "Uh—",
+		  "mood": "concerned",
+		  "condition": "after_reward",
+		  "cg": null,
+		  "choices": [],
+		  "next": "minigame_surf_lesson"
+		},
+		{
+		  "id": "minigame_surf_lesson",
+		  "type": "mechanic",
+		  "speaker": "System",
+		  "text": "",
+		  "mood": "neutral",
+		  "condition": "player_accepted_surfing_bet",
+		  "cg": null,
+		  "choices": [],
+		  "next": "scene_3_postminigame"
+		},
+		{
+		  "id": "scene_3_postminigame",
+		  "type": "dialogue",
+		  "speaker": "Kid",
+		  "text": "Hehe, I had so much fun! Thank you for teaching me today!",
+		  "mood": "happy",
+		  "condition": "minigame_complete",
+		  "cg": null,
+		  "choices": [],
+		  "next": "line_047"
+		},
+		{
+		  "id": "line_047",
+		  "type": "dialogue",
+		  "speaker": "Player",
+		  "text": "No problem!",
+		  "mood": "empathizing",
+		  "condition": "minigame_complete",
+		  "cg": null,
+		  "choices": [],
+		  "next": "line_048"
+		},
+		{
+		  "id": "line_048",
+		  "type": "dialogue",
+		  "speaker": "Malcolm",
+		  "text": "BAHAHA! Guess I forgot to mention I also offer surfing lessons to kids around (beachside name). Here’s an extra twenty for your efforts today.",
+		  "mood": "excited",
+		  "condition": "minigame_complete",
+		  "cg": null,
+		  "choices": [],
+		  "next": "line_049"
+		},
+		{
+		  "id": "line_049",
+		  "type": "dialogue",
+		  "speaker": "Malcolm",
+		  "text": "Man, I burnt all my energy from that surf session, now I’m feeling extra hungry. How about we all get something to eat? I know a place that can cook up some really good food, and it should be fancy enough to meet my sister’s standards.",
+		  "mood": "neutral",
+		  "condition": "minigame_complete",
+		  "cg": null,
+		  "choices": [],
+		  "next": "line_050"
+		},
+		{
+		  "id": "line_050",
+		  "type": "dialogue",
+		  "speaker": "Marina",
+		  "text": "…",
+		  "mood": "irritated",
+		  "condition": "minigame_complete",
+		  "cg": null,
+		  "choices": [],
+		  "next": "line_051"
+		},
+		{
+		  "id": "line_051",
+		  "type": "dialogue",
+		  "speaker": "Player",
+		  "text": "Is it alright if I meet you guys there? I’d like to walk around the area some more and see if I need to buy anything.",
+		  "mood": "smile",
+		  "condition": "minigame_complete",
+		  "cg": null,
+		  "choices": [],
+		  "next": "line_052"
+		},
+		{
+		  "id": "line_052",
+		  "type": "dialogue",
+		  "speaker": "Malcolm",
+		  "text": "No problem, dude, I’ll send you the location. How about we all exchange contacts?",
+		  "mood": "neutral",
+		  "condition": "minigame_complete",
+		  "cg": null,
+		  "choices": [],
+		  "next": "contacts_menu"
+		},
+		{
+		  "id": "contacts_menu",
+		  "type": "mechanic",
+		  "speaker": "System",
+		  "text": "",
+		  "mood": "neutral",
+		  "condition": "contacts_not_added",
+		  "cg": null,
+		  "choices": [],
+		  "next": "line_053"
+		},
+		{
+		  "id": "line_053",
+		  "type": "dialogue",
+		  "speaker": "Malcolm",
+		  "text": "Radical! See ya in a bit!",
+		  "mood": "excited",
+		  "condition": "contacts_added",
+		  "cg": null,
+		  "choices": [],
+		  "next": "end_scene"
+		}
+	  ]
+	},
+	{
+	  "id": "scene_4",
+	  "title": "Encounter with the con-artist",
+	  "background": "A",
+	  "npcs_present": [
+        "Con-artist"
+	  ],
+	  "dialogue": [
+		{
+		  "id": "scene_4_start",
+		  "type": "narrator",
+		  "speaker": "Narrator",
+		  "text": "The player parts ways with Malcolm and Marina, then returns to the shopping district where they first bumped into Marina.",
+		  "mood": "neutral",
+		  "condition": "scene_4_enter",
+		  "cg": "first encounter with conman",
+		  "choices": [],
+		  "next": "line_054"
+		},
+		{
+		  "id": "line_054",
+		  "type": "narrator",
+		  "speaker": "Narrator",
+		  "text": "A man with an extremely distinctive outfit has appeared, apparently setting up a display stand.",
+		  "mood": "curious",
+		  "condition": "scene_4_enter",
+		  "cg": null,
+		  "choices": [],
+		  "next": "line_055"
+		},
+		{
+		  "id": "line_055",
+		  "type": "narrator",
+		  "speaker": "Narrator",
+		  "text": "As the player gets closer, the man feels strangely familiar.",
+		  "mood": "suspicious",
+		  "condition": "scene_4_enter",
+		  "cg": null,
+		  "choices": [],
+		  "next": "line_056"
+		},
+		{
+		  "id": "line_056",
+		  "type": "dialogue",
+		  "speaker": "Con-artist",
+		  "text": "Welcome, welcome! Oh my, looks like you’ve been backpacking a lot, haven’t you? I can tell right away that you need some supplies and you came to the right guy!",
+		  "mood": "wave_talking_wink",
+		  "condition": "vendor_approached",
+		  "cg": null,
+		  "choices": [],
+		  "next": "line_057"
+		},
+		{
+		  "id": "line_057",
+		  "type": "mechanic",
+		  "speaker": "System",
+		  "text": "",
+		  "mood": "neutral",
+		  "condition": "vendor_approached",
+		  "cg": null,
+		  "choices": [],
+		  "next": "line_058"
+		},
+		{
+		  "id": "line_058C",
+		  "type": "thought",
+		  "speaker": "Player",
+		  "text": "Why does this guy look so familiar? Well, at least his prices are slightly better than the ones I saw yesterday.",
+		  "mood": "suspicious",
+		  "condition": "route_C",
+		  "cg": null,
+		  "choices": [],
+		  "next": "line_059"
+		},
+		{
+		  "id": "line_058D",
+		  "type": "thought",
+		  "speaker": "Player",
+		  "text": "What the... the items on the table are almost identical to the stuff I lost? No, I must be going crazy.",
+		  "mood": "suspicious",
+		  "condition": "route_D",
+		  "cg": null,
+		  "choices": [],
+		  "next": "line_059"
+		},
+		{
+		  "id": "line_059",
+		  "type": "choices",
+		  "speaker": "Con-artist",
+		  "text": "Surely something on this table interests you! I assure you everything here will make your backpacking journey much more efficient! These items are actually on sale right now, fifty percent off! What a steal, am I right?",
+		  "mood": "wave_talking_wink",
+		  "condition": "vendor_offer",
+		  "cg": null,
+		  "choices": [
+			{
+			  "id": "choice_E",
+			  "text": "I guess I can buy something.",
+			  "consequence_text": "The player is effectively forced into buying climbing rope, which costs $10 more than the player currently has."
+			},
+			{
+			  "id": "choice_F",
+			  "text": "I think I’m fine for now.",
+			  "consequence_text": "The player keeps their money and can revisit later; the con-artist also suggests a greener location."
+			}
+		  ],
+		  "next": "line_060"
+		},
+		{
+		  "id": "line_060E",
+		  "type": "thought",
+		  "speaker": "Player",
+		  "text": "Hmm… looks like I can only afford climbing rope right now, I’ll buy it just in case I have to climb.",
+		  "mood": "empathizing",
+		  "condition": "choice_E_selected",
+		  "cg": null,
+		  "choices": [],
+		  "next": "line_061E"
+		},
+		{
+		  "id": "line_061E",
+		  "type": "dialogue",
+		  "speaker": "Player",
+		  "text": "Guess I’ll take the climbing rope then.",
+		  "mood": "neutral",
+		  "condition": "choice_E_selected",
+		  "cg": null,
+		  "choices": [],
+		  "next": "line_062E"
+		},
+		{
+		  "id": "line_062E",
+		  "type": "dialogue",
+		  "speaker": "Con-artist",
+		  "text": "Perfect! Trust me when I say this, this rope is the most durable there is!",
+		  "mood": "talking_wink",
+		  "condition": "choice_E_selected",
+		  "cg": null,
+		  "choices": [],
+		  "next": "line_063"
+		},
+		{
+		  "id": "line_060F",
+		  "type": "thought",
+		  "speaker": "Player",
+		  "text": "I think I should save my money for when I spot some better prices. I’ll just get some water from the restaurant.",
+		  "mood": "neutral",
+		  "condition": "choice_F_selected",
+		  "cg": null,
+		  "choices": [],
+		  "next": "line_061F"
+		},
+		{
+		  "id": "line_061F",
+		  "type": "dialogue",
+		  "speaker": "Player",
+		  "text": "I think I’m good, thanks for the offer though!",
+		  "mood": "smile",
+		  "condition": "choice_F_selected",
+		  "cg": null,
+		  "choices": [],
+		  "next": "line_062F"
+		},
+		{
+		  "id": "line_062F",
+		  "type": "dialogue",
+		  "speaker": "Con-artist",
+		  "text": "No worries, come by anytime!",
+		  "mood": "wave_talking_wink",
+		  "condition": "choice_F_selected",
+		  "cg": null,
+		  "choices": [],
+		  "next": "line_063F"
+		},
+		{
+		  "id": "line_063F",
+		  "type": "dialogue",
+		  "speaker": "Con-artist",
+		  "text": "Hey, since you’re travelling, you most certainly should check out (lakeside location name). It has a lot more natural greenery if you enjoy that type of stuff.",
+		  "mood": "smile_not_wave",
+		  "condition": "choice_F_selected",
+		  "cg": null,
+		  "choices": [],
+		  "next": "line_064"
+		},
+		{
+		  "id": "line_064",
+		  "type": "dialogue",
+		  "speaker": "Player",
+		  "text": "Thanks! I’ll probably head there next then.",
+		  "mood": "happy_laughing",
+		  "condition": "choice_F_selected",
+		  "cg": null,
+		  "choices": [],
+		  "next": "line_065"
+		},
+		{
+		  "id": "line_065",
+		  "type": "dialogue",
+		  "speaker": "Marina",
+		  "text": "Where are you? I’m starving! 🥹 I think my brother already sent you the location, go look at his messages! 😤",
+		  "mood": "through_text",
+		  "condition": "after_vendor_interaction",
+		  "cg": null,
+		  "choices": [],
+		  "next": "end_scene"
+		}
+	  ]
+	},
+	{
+	  "id": "scene_5",
+	  "title": "Restaurant",
+	  "background": "D",
+	  "npcs_present": [
+		"Marina",
+        "Malcolm"
+	  ],
+	  "dialogue": [
+		{
+		  "id": "scene_5_start",
+		  "type": "mechanic",
+		  "speaker": "System",
+		  "text": "",
+		  "mood": "neutral",
+		  "condition": "restaurant_location_received",
+		  "cg": null,
+		  "choices": [],
+		  "next": "line_066"
+		},
+		{
+		  "id": "line_066",
+		  "type": "narrator",
+		  "speaker": "Narrator",
+		  "text": "The restaurant is elegant, with an overhead view of the ocean, colorful flowers, marble, and tall pillars.",
+		  "mood": "awe",
+		  "condition": "scene_5_enter",
+		  "cg": null,
+		  "choices": [],
+		  "next": "line_067"
+		},
+		{
+		  "id": "line_067",
+		  "type": "narrator",
+		  "speaker": "Narrator",
+		  "text": "Marina and Malcolm wave enthusiastically at the player.",
+		  "mood": "welcoming",
+		  "condition": "scene_5_enter",
+		  "cg": "Malcolm and Marina waving at the MC from the restaurant",
+		  "choices": [],
+		  "next": "line_068"
+		},
+		{
+		  "id": "line_068",
+		  "type": "dialogue",
+		  "speaker": "Malcolm",
+		  "text": "Yo, dude, sit down! I already ordered some appetizers while we were waiting. I ordered ceviche, calamari and some popcorn shrimp.",
+		  "mood": "excited",
+		  "condition": "scene_5_enter",
+		  "cg": null,
+		  "choices": [],
+		  "next": "line_069"
+		},
+		{
+		  "id": "line_069",
+		  "type": "dialogue",
+		  "speaker": "Player",
+		  "text": "These are amazing!",
+		  "mood": "excited",
+		  "condition": "after_appetizers",
+		  "cg": null,
+		  "choices": [],
+		  "next": "line_070"
+		},
+		{
+		  "id": "line_070",
+		  "type": "dialogue",
+		  "speaker": "Malcolm",
+		  "text": "Ha! Those are just the appetizers, wait ‘til ya get to the main meals, they’ll have you catching waves for days!",
+		  "mood": "excited",
+		  "condition": "after_appetizers",
+		  "cg": null,
+		  "choices": [],
+		  "next": "line_071"
+		},
+		{
+		  "id": "line_071",
+		  "type": "dialogue",
+		  "speaker": "Malcolm",
+		  "text": "Speaking of main meals, have we decided what we wanted to order?",
+		  "mood": "confident",
+		  "condition": "menu_open",
+		  "cg": null,
+		  "choices": [],
+		  "next": "line_072"
+		},
+		{
+		  "id": "line_072",
+		  "type": "dialogue",
+		  "speaker": "Marina",
+		  "text": "I’ll go with the oysters Rockefeller, how about you, Y/N?",
+		  "mood": "smile",
+		  "condition": "menu_open",
+		  "cg": null,
+		  "choices": [],
+		  "next": "line_073"
+		},
+		{
+		  "id": "line_073",
+		  "type": "dialogue",
+		  "speaker": "Malcolm",
+		  "text": "C’mon Mari, give ‘em some time to look at the menu.",
+		  "mood": "neutral",
+		  "condition": "menu_open",
+		  "cg": null,
+		  "choices": [],
+		  "next": "line_074"
+		},
+		{
+		  "id": "line_074",
+		  "type": "choices",
+		  "speaker": "Marina",
+		  "text": "You’re the one who asked if we’re ready to order!",
+		  "mood": "irritated",
+		  "condition": "menu_open",
+		  "cg": null,
+		  "choices": [
+			{
+			  "id": "choice_G",
+			  "text": "I’m not that hungry right now.",
+			  "consequence_text": "The player orders poke, a lighter meal."
+			},
+			{
+			  "id": "choice_H",
+			  "text": "I want something rich in flavour.",
+			  "consequence_text": "The player orders paella, which Marina finds appealing and expressive of shared taste."
+			},
+			{
+			  "id": "choice_I",
+			  "text": "I’ll go with something basic.",
+			  "consequence_text": "The player orders a fish sandwich, which Marina interprets as thoughtful and considerate."
+			}
+		  ],
+		  "next": "line_075"
+		},
+		{
+		  "id": "line_075G",
+		  "type": "dialogue",
+		  "speaker": "Player",
+		  "text": "I’ll go with poke. Surprisingly I’m not too hungry so I’ll have a lighter meal.",
+		  "mood": "smile",
+		  "condition": "choice_G_selected",
+		  "cg": null,
+		  "choices": [],
+		  "next": "line_076G"
+		},
+		{
+		  "id": "line_076G",
+		  "type": "thought",
+		  "speaker": "Marina",
+		  "text": "Poke comes in so many varieties! Even I could make something as simple as that if I was their wife!",
+		  "mood": "dreamy",
+		  "condition": "choice_G_selected",
+		  "cg": null,
+		  "choices": [],
+		  "next": "line_077"
+		},
+		{
+		  "id": "line_075H",
+		  "type": "dialogue",
+		  "speaker": "Player",
+		  "text": "I’ll go with a dish of paella. I can already taste it just by reading it off the menu!",
+		  "mood": "happy_laughing",
+		  "condition": "choice_H_selected",
+		  "cg": null,
+		  "choices": [],
+		  "next": "line_076H"
+		},
+		{
+		  "id": "line_076H",
+		  "type": "thought",
+		  "speaker": "Marina",
+		  "text": "They know what's rich in taste! Just like me. Kya~ we share so much in common!",
+		  "mood": "excited_blushing",
+		  "condition": "choice_H_selected",
+		  "cg": null,
+		  "choices": [],
+		  "next": "line_077"
+		},
+		{
+		  "id": "line_075I",
+		  "type": "dialogue",
+		  "speaker": "Player",
+		  "text": "I think I’ll just have this fish sandwich.",
+		  "mood": "smile",
+		  "condition": "choice_I_selected",
+		  "cg": null,
+		  "choices": [],
+		  "next": "line_076I"
+		},
+		{
+		  "id": "line_076I",
+		  "type": "thought",
+		  "speaker": "Marina",
+		  "text": "It’s the cheapest thing on this menu! They know my brother is paying, are they being considerate? So admirable!",
+		  "mood": "blushing",
+		  "condition": "choice_I_selected",
+		  "cg": null,
+		  "choices": [],
+		  "next": "line_077"
+		},
+		{
+		  "id": "line_077",
+		  "type": "narrator",
+		  "speaker": "Narrator",
+		  "text": "The food arrives with a rich aroma. Everyone grows more comfortable and starts sharing life experiences as the sun sets in a spread of vibrant colors across the sky.",
+		  "mood": "warm",
+		  "condition": "after_ordering",
+		  "cg": null,
+		  "choices": [],
+		  "next": "line_078"
+		},
+		{
+		  "id": "line_078",
+		  "type": "dialogue",
+		  "speaker": "Player",
+		  "text": "Thank you for the meal. I had a great time with both of you. I would’ve stayed longer but I have to keep moving forward. I don’t think I can afford anything around here…",
+		  "mood": "happy_laughing",
+		  "condition": "meal_finished",
+		  "cg": null,
+		  "choices": [],
+		  "next": "line_079"
+		},
+		{
+		  "id": "line_079",
+		  "type": "dialogue",
+		  "speaker": "Malcolm",
+		  "text": "Anytime! Wish you could stay longer, dude, you’re always welcome here!",
+		  "mood": "confident",
+		  "condition": "meal_finished",
+		  "cg": null,
+		  "choices": [],
+		  "next": "line_080"
+		},
+		{
+		  "id": "line_080",
+		  "type": "dialogue",
+		  "speaker": "Marina",
+		  "text": "It’s getting dark! Do you need a place to stay? Not that I care that much or anything.",
+		  "mood": "worried",
+		  "condition": "meal_finished",
+		  "cg": null,
+		  "choices": [],
+		  "next": "line_081"
+		},
+		{
+		  "id": "line_081",
+		  "type": "dialogue",
+		  "speaker": "Player",
+		  "text": "Really? That’d be great, actually.",
+		  "mood": "happy_laughing",
+		  "condition": "meal_finished",
+		  "cg": null,
+		  "choices": [],
+		  "next": "line_082"
+		},
+		{
+		  "id": "line_082",
+		  "type": "dialogue",
+		  "speaker": "Marina",
+		  "text": "We’ll set up the guest bedroom for you, or you could stay in mine.",
+		  "mood": "dreamy",
+		  "condition": "meal_finished",
+		  "cg": null,
+		  "choices": [],
+		  "next": "line_083"
+		},
+		{
+		  "id": "line_083",
+		  "type": "dialogue",
+		  "speaker": "Malcolm",
+		  "text": "What’d you say at the end there?",
+		  "mood": "surprised",
+		  "condition": "meal_finished",
+		  "cg": null,
+		  "choices": [],
+		  "next": "line_084"
+		},
+		{
+		  "id": "line_084",
+		  "type": "dialogue",
+		  "speaker": "Marina",
+		  "text": "I think you still got water in your ears!",
+		  "mood": "embarrassed",
+		  "condition": "meal_finished",
+		  "cg": null,
+		  "choices": [],
+		  "next": "line_085"
+		},
+		{
+		  "id": "line_085",
+		  "type": "narrator",
+		  "speaker": "Narrator",
+		  "text": "The player sleeps comfortably and wakes up fully energized the next morning. After saying farewell, they begin heading toward (lakeside location name).",
+		  "mood": "renewed",
+		  "condition": "next_day",
+		  "cg": "MC sleeping comfortably",
+		  "choices": [],
+		  "next": "line_086"
+		},
+		{
+		  "id": "line_086",
+		  "type": "mechanic",
+		  "speaker": "System",
+		  "text": "",
+		  "mood": "neutral",
+		  "condition": "next_destination_unlocked",
+		  "cg": null,
+		  "choices": [],
+		  "next": "end_dest"
+		}
+	  ]
+	}
+  ]
+}
