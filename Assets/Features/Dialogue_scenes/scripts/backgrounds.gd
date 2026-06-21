@@ -39,4 +39,7 @@ func _process(delta: float) -> void:
 	pass
 
 func set_background(bg: String):
-	sprite.texture = bg_resources[dest][bg]
+	if bg_resources[dest].has(bg):
+		sprite.texture = bg_resources[dest][bg]
+	else:
+		print('invalid bg %s' % bg)

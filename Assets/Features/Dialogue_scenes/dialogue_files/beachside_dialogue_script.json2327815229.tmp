@@ -455,7 +455,7 @@
 	{
 	  "id": "scene_3",
 	  "title": "Bet / encounter with Malcolm",
-	  "background": "",
+	  "background": "C",
 	  "song": "",
 	  "npcs_present": [
 		"Marina",

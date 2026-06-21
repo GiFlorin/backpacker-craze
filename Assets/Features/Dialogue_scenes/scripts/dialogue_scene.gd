@@ -1,6 +1,6 @@
 extends Control
 
-@onready var choice_box: VBoxContainer = $dialogue_box/NinePatchRect/choice_box
+@onready var choice_box: VBoxContainer = $dialogue_box/choice_box
 @onready var dialogue_box: Control = $dialogue_box
 @onready var dialogues: Node2D = $dialogues
 @onready var backgrounds: Node2D = $backgrounds
@@ -27,15 +27,20 @@ func _process(delta: float) -> void:
 func _input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed('Jump'):
 		if !choice_box.visible and dialogue_box.ready_to_go:
-			var readytg = dialogue_box.ready_to_go
 			next_dialogue()
 
 func set_dialogue_visual(data: Dictionary):
+	$dialogue_box/NinePatchRect.visible = true
 	dialogue_box.change_name_to(data['speaker'])
 	past_speaker = data['speaker']
 	dialogue_box.change_text_to(data['text'])
 	if data['type'] == 'choices':
 		dialogue_box.set_options(data['choices'])
+	elif data['type'] == 'mechanic':
+		if data['id'] == 'name_input_player':
+			dialogue_box.input_name()
+			$dialogue_box/NinePatchRect.hide()
+			
 
 func next_dialogue():
 	var data = dialogues.advance()
@@ -48,7 +53,7 @@ func next_dialogue():
 		pass
 
 func _on_dialogue_box_choice_made(index: int) -> void:
-	$dialogue_box/NinePatchRect/choice_box.hide()
+	choice_box.hide()
 	var data = dialogues.get_cur_data()
 	
 	var condition = "%s_selected" % data['choices'][index]['id']

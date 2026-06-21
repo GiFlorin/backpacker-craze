@@ -3,7 +3,9 @@ extends Control
 @onready var character_name: RichTextLabel = $NinePatchRect/name
 @onready var text_field: RichTextLabel = $NinePatchRect/text
 @onready var typewriter_timer: Timer = $NinePatchRect/typewriter_timer
-@onready var choice_box: VBoxContainer = $NinePatchRect/choice_box
+@onready var choice_box: VBoxContainer = $choice_box
+@onready var input_name_box: VBoxContainer = $input_name_box
+
 
 var typewriter_skip = false
 var ready_to_go = false
@@ -11,7 +13,7 @@ signal choice_made(index: int)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	input_name_box.hide()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -41,7 +43,7 @@ func typewriter_effect(len:int, node:Control, type_vel:float=15):
 		node.visible_characters = vis_char
 		await typewriter_timer.timeout
 	node.visible_characters = -1
-	if typewriter_skip and node.visible_characters == -1:
+	if typewriter_skip or node.visible_characters == -1:
 		ready_to_go = true
 
 func set_options(options:Array):
@@ -53,6 +55,14 @@ func set_options(options:Array):
 			child.text = options[index]['text']
 		else:
 			child.hide()
+
+func input_name():
+	input_name_box.visible = true
+	
+func _on_name_button_pressed() -> void:
+	input_name_box.hide()
+	GameManager.player_name = $input_name_box/LineEdit.text
+	self.get_parent().next_dialogue()
 
 # ------------ choice option buttons -------------
 func _on_option_a_pressed() -> void:

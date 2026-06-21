@@ -1,14 +1,14 @@
 [gd_scene format=3 uid="uid://ctti1ly30v3p6"]
 
-[ext_resource type="Script" uid="uid://cu172khecoudj" path="res://Assets/Features/Dialogue_scenes/dialogue_scene.gd" id="1_eoa6h"]
-[ext_resource type="Script" uid="uid://crvracta2l6s8" path="res://Assets/Features/Dialogue_scenes/dialogue_box.gd" id="2_5bh3x"]
-[ext_resource type="Script" uid="uid://hdd5scfsx38" path="res://Assets/Features/Dialogue_scenes/dialogues.gd" id="2_axfue"]
-[ext_resource type="Script" uid="uid://d3ppmpsft1r1d" path="res://Assets/Features/Dialogue_scenes/player_sprite.gd" id="2_q7hxf"]
-[ext_resource type="Script" uid="uid://4712y4oa5rpv" path="res://Assets/Features/Dialogue_scenes/npc_sprite.gd" id="2_rendj"]
+[ext_resource type="Script" uid="uid://cu172khecoudj" path="res://Assets/Features/Dialogue_scenes/scripts/dialogue_scene.gd" id="1_eoa6h"]
+[ext_resource type="Script" uid="uid://crvracta2l6s8" path="res://Assets/Features/Dialogue_scenes/scripts/dialogue_box.gd" id="2_5bh3x"]
+[ext_resource type="Script" uid="uid://hdd5scfsx38" path="res://Assets/Features/Dialogue_scenes/scripts/dialogues.gd" id="2_axfue"]
+[ext_resource type="Script" uid="uid://d3ppmpsft1r1d" path="res://Assets/Features/Dialogue_scenes/scripts/player_sprite.gd" id="2_q7hxf"]
+[ext_resource type="Script" uid="uid://4712y4oa5rpv" path="res://Assets/Features/Dialogue_scenes/scripts/npc_sprite.gd" id="2_rendj"]
 [ext_resource type="Texture2D" uid="uid://b27l4t4wq0ulj" path="res://Assets/Features/Dialogue_scenes/assets/marina/Annoyed.png" id="3_q7hxf"]
 [ext_resource type="Script" uid="uid://cbk3d46udi7ha" path="res://Assets/Features/Dialogue_scenes/dialogue_files/lakeside_dialogue.gd" id="4_b5wxp"]
 [ext_resource type="Script" uid="uid://cvuxt2dacht0x" path="res://Assets/Features/Dialogue_scenes/dialogue_files/jungle_city_dialogue.gd" id="5_xkb6u"]
-[ext_resource type="Script" uid="uid://qclge4x3inci" path="res://Assets/Features/Dialogue_scenes/backgrounds.gd" id="6_b5wxp"]
+[ext_resource type="Script" uid="uid://qclge4x3inci" path="res://Assets/Features/Dialogue_scenes/scripts/backgrounds.gd" id="6_b5wxp"]
 [ext_resource type="Texture2D" uid="uid://bd4sdpuqi4dg7" path="res://Assets/Features/Dialogue_scenes/assets/MC/Amused.png" id="7_b5wxp"]
 
 [sub_resource type="Animation" id="Animation_q7hxf"]
@@ -123,6 +123,63 @@ offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("2_5bh3x")
 
+[node name="input_name_box" type="VBoxContainer" parent="dialogue_box" unique_id=308455714]
+visible = false
+layout_mode = 0
+offset_left = -331.0
+offset_top = -235.0
+offset_right = 348.0
+offset_bottom = 6.0
+theme_override_constants/separation = 20
+
+[node name="Label" type="Label" parent="dialogue_box/input_name_box" unique_id=999532520]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.5764706)
+theme_override_font_sizes/font_size = 32
+text = "What's your name, traveler?"
+
+[node name="LineEdit" type="LineEdit" parent="dialogue_box/input_name_box" unique_id=1231643476]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+placeholder_text = "Name"
+
+[node name="name_button" type="Button" parent="dialogue_box/input_name_box" unique_id=1454105585]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Confirm"
+
+[node name="choice_box" type="VBoxContainer" parent="dialogue_box" unique_id=404986743]
+visible = false
+layout_mode = 1
+offset_left = -424.0
+offset_top = -312.0
+offset_right = 449.0
+offset_bottom = 36.0
+theme_override_constants/separation = 45
+alignment = 1
+
+[node name="option_A" type="Button" parent="dialogue_box/choice_box" unique_id=1766015089]
+custom_minimum_size = Vector2(1.485, 0)
+layout_mode = 2
+size_flags_stretch_ratio = 1.22
+theme_override_font_sizes/font_size = 32
+text = "blablabla"
+
+[node name="option_B" type="Button" parent="dialogue_box/choice_box" unique_id=2054494137]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "blablabla"
+
+[node name="option_C" type="Button" parent="dialogue_box/choice_box" unique_id=1073686486]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "blablabla"
+
+[node name="option_D" type="Button" parent="dialogue_box/choice_box" unique_id=468425414]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "blablabla"
+
 [node name="NinePatchRect" type="NinePatchRect" parent="dialogue_box" unique_id=2108500493]
 layout_mode = 0
 offset_left = -902.0
@@ -160,42 +217,12 @@ text = "hello! blablablskndviboswiwydbcipadcpiauydbviçbwsviuyhsbpviabibdbvd"
 [node name="typewriter_timer" type="Timer" parent="dialogue_box/NinePatchRect" unique_id=677212701]
 wait_time = 0.5
 
-[node name="choice_box" type="VBoxContainer" parent="dialogue_box/NinePatchRect" unique_id=404986743]
-layout_mode = 1
-offset_left = 478.0
-offset_top = -426.0
-offset_right = 1351.0
-offset_bottom = -78.0
-theme_override_constants/separation = 45
-alignment = 1
-
-[node name="option_A" type="Button" parent="dialogue_box/NinePatchRect/choice_box" unique_id=1766015089]
-custom_minimum_size = Vector2(1.485, 0)
-layout_mode = 2
-size_flags_stretch_ratio = 1.22
-theme_override_font_sizes/font_size = 32
-text = "blablabla"
-
-[node name="option_B" type="Button" parent="dialogue_box/NinePatchRect/choice_box" unique_id=2054494137]
-layout_mode = 2
-theme_override_font_sizes/font_size = 32
-text = "blablabla"
-
-[node name="option_C" type="Button" parent="dialogue_box/NinePatchRect/choice_box" unique_id=1073686486]
-layout_mode = 2
-theme_override_font_sizes/font_size = 32
-text = "blablabla"
-
-[node name="option_D" type="Button" parent="dialogue_box/NinePatchRect/choice_box" unique_id=468425414]
-layout_mode = 2
-theme_override_font_sizes/font_size = 32
-text = "blablabla"
-
 [node name="Camera2D" type="Camera2D" parent="." unique_id=932320669]
 zoom = Vector2(0.6, 0.6)
 
 [connection signal="choice_made" from="dialogue_box" to="." method="_on_dialogue_box_choice_made"]
-[connection signal="pressed" from="dialogue_box/NinePatchRect/choice_box/option_A" to="dialogue_box" method="_on_option_a_pressed"]
-[connection signal="pressed" from="dialogue_box/NinePatchRect/choice_box/option_B" to="dialogue_box" method="_on_option_b_pressed"]
-[connection signal="pressed" from="dialogue_box/NinePatchRect/choice_box/option_C" to="dialogue_box" method="_on_option_c_pressed"]
-[connection signal="pressed" from="dialogue_box/NinePatchRect/choice_box/option_D" to="dialogue_box" method="_on_option_d_pressed"]
+[connection signal="pressed" from="dialogue_box/input_name_box/name_button" to="dialogue_box" method="_on_name_button_pressed"]
+[connection signal="pressed" from="dialogue_box/choice_box/option_A" to="dialogue_box" method="_on_option_a_pressed"]
+[connection signal="pressed" from="dialogue_box/choice_box/option_B" to="dialogue_box" method="_on_option_b_pressed"]
+[connection signal="pressed" from="dialogue_box/choice_box/option_C" to="dialogue_box" method="_on_option_c_pressed"]
+[connection signal="pressed" from="dialogue_box/choice_box/option_D" to="dialogue_box" method="_on_option_d_pressed"]

@@ -8,6 +8,7 @@ var happiness: int = 0
 var cur_destination = BEACH
 var previous_scene: String = ""
 var player_position: Vector2 = Vector2.ZERO
+var player_name: String
 
 enum {
 	BEACH,

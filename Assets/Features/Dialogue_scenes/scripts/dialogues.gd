@@ -80,7 +80,7 @@ func advance():
 		else:
 			print('ERROR')
 
-func advance_scene():
+func advance_scene(): # FIX
 	_scene_index += 1
 	_index = 0
 	get_tree().paused = true
