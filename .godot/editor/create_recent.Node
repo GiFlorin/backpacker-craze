@@ -1,0 +1,14 @@
+ColorRect
+Label
+Node2D
+Marker2D
+AnimationPlayer
+Camera2D
+ProgressBar
+Button
+AudioStreamPlayer2D
+LineEdit
+VBoxContainer
+MarginContainer
+CenterContainer
+Sprite2D
