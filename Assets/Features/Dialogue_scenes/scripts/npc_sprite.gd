@@ -30,7 +30,7 @@ func update_character(new_character:String, mood:String):
 
 func change_mood(new_mood:String):
 	if sprites_resources[cur_character].has(new_mood):
-		sprite.texture = sprites_resources[cur_character][new_mood]
+		sprite.texture = load(sprites_resources[cur_character][new_mood])
 		cur_mood = new_mood
 	else:
 		print('%s mood invalid' % new_mood)

@@ -71,7 +71,7 @@ func advance():
 			
 			# if the condition is in the available conditions dict
 			if dialogue_data['condition'] in cur_conditions.keys(): 
-				if cur_conditions[dialogue_data['condition']] == true:
+				if cur_conditions[dialogue_data['condition']] == true and dialogue_data['speaker'] != 'System':
 					return dialogue_data
 				else:
 					continue

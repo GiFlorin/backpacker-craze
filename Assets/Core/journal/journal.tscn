@@ -1,0 +1,137 @@
+[gd_scene format=3 uid="uid://cvopnwo8qyh1l"]
+
+[ext_resource type="Script" uid="uid://bgnbiac5s0py8" path="res://Assets/Core/journal/journal.gd" id="1_ie2wr"]
+[ext_resource type="Texture2D" uid="uid://c2lkmdrykl4x3" path="res://Assets/Core/journal/assets/blank journal.png" id="2_qoaju"]
+[ext_resource type="Texture2D" uid="uid://dms3ssytah3ah" path="res://Assets/Core/journal/assets/jungle village.png" id="3_yt830"]
+[ext_resource type="Texture2D" uid="uid://bgcnopoka4wbd" path="res://Assets/Core/journal/assets/seaside.png" id="4_djp28"]
+[ext_resource type="Texture2D" uid="uid://b5bq5ioqpahpy" path="res://Assets/Core/journal/assets/lakeside.png" id="5_teyn4"]
+[ext_resource type="Texture2D" uid="uid://by8urpryc0bcx" path="res://Assets/Core/journal/assets/mc_icon.png" id="6_ldtpb"]
+
+[sub_resource type="Animation" id="Animation_kl8vd"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Icon:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-436, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Icon:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-177, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_5mc4w"]
+resource_name = "beach_lake"
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Icon:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(-436, -0.25, 0, 0.25, 0, -442, -0.16666667, 1, 0, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Icon:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(-177, -0.25, 0, 0.25, 0, 109.99997, -0.16666667, -47.83333, 0, 0),
+"times": PackedFloat32Array(0, 1)
+}
+
+[sub_resource type="Animation" id="Animation_xd6fu"]
+resource_name = "lake_jungle"
+length = 1.5
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Icon:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 2, 2, 2, 2),
+"points": PackedFloat32Array(-442, -0.25, 0, 0.25, 0, -47, -0.096666664, -71.27554, 0.028333336, 20.891111, 110.99994, -0.125, -92.16666, 0, 0, 159, -0.028333336, -0.34000233, 0.096666664, 1.1600078, 120, -0.125, -1.5000101, 0, 0),
+"times": PackedFloat32Array(0, 0.58, 0.75, 0.92, 1.5)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Icon:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 2, 2, 2, 2),
+"points": PackedFloat32Array(109.99997, -0.25, 0, 0.25, 0, 176, -0.096666664, -5.800004, 0.028333336, 1.7000014, 155, -0.125, -7.5000052, 0, 0, 80, -0.028333336, 12.466667, 0.096666664, -42.53333, -174.99997, -0.125, 54.999996, 0, 0),
+"times": PackedFloat32Array(0, 0.58, 0.75, 0.92, 1.5)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_htvje"]
+_data = {
+&"RESET": SubResource("Animation_kl8vd"),
+&"beach_lake": SubResource("Animation_5mc4w"),
+&"lake_jungle": SubResource("Animation_xd6fu")
+}
+
+[node name="Journal" type="Node2D" unique_id=18227770]
+script = ExtResource("1_ie2wr")
+
+[node name="Camera" type="Camera2D" parent="." unique_id=1122235568]
+
+[node name="BlankJournal" type="Sprite2D" parent="." unique_id=118392950]
+position = Vector2(-9.536743e-07, 1.0000014)
+scale = Vector2(0.43981484, 0.4398148)
+texture = ExtResource("2_qoaju")
+
+[node name="drawings" type="Node2D" parent="." unique_id=1459748175]
+
+[node name="JungleVillage" type="Sprite2D" parent="drawings" unique_id=44207838]
+position = Vector2(26.99997, -5.9999924)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("3_yt830")
+
+[node name="Seaside" type="Sprite2D" parent="drawings" unique_id=1851856887]
+position = Vector2(-13.9999695, -16.999985)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("4_djp28")
+
+[node name="Lakeside" type="Sprite2D" parent="drawings" unique_id=1261939173]
+position = Vector2(-10.9999695, -4.000004)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("5_teyn4")
+
+[node name="markers" type="Node2D" parent="." unique_id=1623695756]
+
+[node name="beach_marker" type="Marker2D" parent="markers" unique_id=2080132314]
+position = Vector2(-436, -177)
+
+[node name="lake_marker" type="Marker2D" parent="markers" unique_id=1679059604]
+position = Vector2(110, 0)
+
+[node name="jungle_marker" type="Marker2D" parent="markers" unique_id=707482011]
+position = Vector2(120, -175)
+
+[node name="Icon" type="Sprite2D" parent="." unique_id=1194987706]
+position = Vector2(-436, -177)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("6_ldtpb")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=93961687]
+libraries/ = SubResource("AnimationLibrary_htvje")
