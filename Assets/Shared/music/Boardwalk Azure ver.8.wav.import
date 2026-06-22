@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bpgcs8gqoe7qn"
+path="res://.godot/imported/Boardwalk Azure ver.8.wav-581339de67a437c349f28487b1bd3b4a.sample"
+
+[deps]
+
+source_file="res://Assets/Shared/music/Boardwalk Azure ver.8.wav"
+dest_files=["res://.godot/imported/Boardwalk Azure ver.8.wav-581339de67a437c349f28487b1bd3b4a.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

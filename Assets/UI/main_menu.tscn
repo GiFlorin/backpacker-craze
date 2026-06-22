@@ -21,6 +21,6 @@ offset_right = -227.0
 offset_bottom = 265.0
 theme_override_fonts/font = ExtResource("2_2rim3")
 theme_override_font_sizes/font_size = 32
-text = "Click anywhere 
+text = "Click SPACE 
 to play"
 horizontal_alignment = 1

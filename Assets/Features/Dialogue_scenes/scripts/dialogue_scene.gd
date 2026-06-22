@@ -26,21 +26,35 @@ func _process(delta: float) -> void:
 
 func _input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed('Jump'):
-		if !choice_box.visible and dialogue_box.ready_to_go:
+		if dialogue_box.advance_check():
 			next_dialogue()
 
 func set_dialogue_visual(data: Dictionary):
 	$dialogue_box/NinePatchRect.visible = true
-	dialogue_box.change_name_to(data['speaker'])
+	$dialogue_box/player_sprite.show()
+	
 	past_speaker = data['speaker']
-	dialogue_box.change_text_to(data['text'])
+	if past_speaker == 'Player':
+		dialogue_box.change_name_to(GameManager.player_name)
+	elif past_speaker == 'Narrator':
+		dialogue_box.change_name_to('')
+	else:
+		dialogue_box.change_name_to(past_speaker)
+	
+	var text = data['text']
+	text = text.replace('Y/N', GameManager.player_name)
+	if data['type'] == 'thought':
+		text = "(%s)" % text
+	dialogue_box.change_text_to(text)
+	
 	if data['type'] == 'choices':
 		dialogue_box.set_options(data['choices'])
+		
 	elif data['type'] == 'mechanic':
 		if data['id'] == 'name_input_player':
 			dialogue_box.input_name()
 			$dialogue_box/NinePatchRect.hide()
-			
+			$dialogue_box/player_sprite.hide()
 
 func next_dialogue():
 	var data = dialogues.advance()

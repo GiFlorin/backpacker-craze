@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://djbw562x0ytr4"
+path="res://.godot/imported/Dancing Lights ver.5.wav-0724bd29e6dcdbae5b953420a15515a9.sample"
+
+[deps]
+
+source_file="res://Assets/Shared/music/Dancing Lights ver.5.wav"
+dest_files=["res://.godot/imported/Dancing Lights ver.5.wav-0724bd29e6dcdbae5b953420a15515a9.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

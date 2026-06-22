@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://dau06pvjkscxu"]
 
 [ext_resource type="Script" uid="uid://crvracta2l6s8" path="res://Assets/Features/Dialogue_scenes/scripts/dialogue_box.gd" id="1_jxfin"]
-[ext_resource type="FontFile" path="res://Assets/Shared/VarelaRound-Regular.ttf" id="2_2lpl4"]
-[ext_resource type="Theme" path="res://Assets/Shared/theme1.tres" id="3_2lpl4"]
+[ext_resource type="FontFile" uid="uid://kwcy12p1ml0f" path="res://Assets/Shared/VarelaRound-Regular.ttf" id="2_2lpl4"]
+[ext_resource type="Theme" uid="uid://cpw5rd2dfkvnc" path="res://Assets/Shared/theme1.tres" id="3_2lpl4"]
 
 [node name="dialogue_box" type="Control" unique_id=1519377850]
 layout_mode = 3
@@ -130,6 +130,7 @@ offset_top = 422.0
 offset_right = 859.0
 offset_bottom = 462.0
 theme = ExtResource("3_2lpl4")
+theme_override_font_sizes/font_size = 32
 text = "SPACE to skip"
 
 [connection signal="pressed" from="input_name_box/name_button" to="." method="_on_name_button_pressed"]

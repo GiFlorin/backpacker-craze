@@ -22,6 +22,13 @@ func _process(delta: float) -> void:
 func _input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("Jump"):
 		typewriter_skip = true
+		$skip_lbl.hide()
+
+func advance_check():
+	if !choice_box.visible and ready_to_go and !input_name_box.visible:
+		return true
+	else:
+		return false
 
 func change_name_to(text:String):
 	character_name.text = str(text)
@@ -62,7 +69,7 @@ func input_name():
 	
 func _on_name_button_pressed() -> void:
 	input_name_box.hide()
-	GameManager.player_name = $input_name_box/LineEdit.text
+	GameManager.player_name = $input_name_box/LineEdit.text.capitalize()
 	self.get_parent().next_dialogue()
 
 # ------------ choice option buttons -------------

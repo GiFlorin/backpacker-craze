@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b44buc4n4l2m"
+path="res://.godot/imported/Berries and Vine ver.6.wav-b074727379ffb2f82a007b5ea61ce0ff.sample"
+
+[deps]
+
+source_file="res://Assets/Shared/music/Berries and Vine ver.6.wav"
+dest_files=["res://.godot/imported/Berries and Vine ver.6.wav-b074727379ffb2f82a007b5ea61ce0ff.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
