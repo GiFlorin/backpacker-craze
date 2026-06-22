@@ -1,0 +1,6 @@
+[gd_resource type="Theme" format=3 uid="uid://cpw5rd2dfkvnc"]
+
+[ext_resource type="FontFile" uid="uid://kwcy12p1ml0f" path="res://Assets/Shared/VarelaRound-Regular.ttf" id="1_dp01i"]
+
+[resource]
+Button/fonts/font = ExtResource("1_dp01i")

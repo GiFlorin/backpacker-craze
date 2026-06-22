@@ -25,6 +25,11 @@ GameManager="*res://Assets/Core/game_manager/game_manager.gd"
 SceneTransition="*uid://x4ksrb34p7a1"
 PauseMenu="*uid://ch85i7487tecd"
 DialogueManager="*uid://ca6drg3afmnaj"
+MusicManager="*uid://co0c03bdcmtf7"
+
+[display]
+
+window/stretch/mode="viewport"
 
 [editor]
 
@@ -95,3 +100,4 @@ Pause={
 
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+anti_aliasing/quality/msaa_2d=1

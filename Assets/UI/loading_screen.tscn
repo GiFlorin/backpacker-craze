@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://bxhycnau0iqvx"]
+
+[ext_resource type="FontFile" uid="uid://kwcy12p1ml0f" path="res://Assets/Shared/VarelaRound-Regular.ttf" id="1_lvd47"]
+
+[node name="LoadingScreen" type="Node2D" unique_id=373038261]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=128570893]
+offset_left = -662.0
+offset_top = -380.0
+offset_right = 638.0
+offset_bottom = 353.0
+color = Color(0.68551224, 0.7573634, 0.952769, 1)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=348193133]
+
+[node name="Label" type="Label" parent="." unique_id=942924874]
+offset_left = -144.0
+offset_top = -164.0
+offset_right = 153.0
+offset_bottom = -86.0
+theme_override_fonts/font = ExtResource("1_lvd47")
+theme_override_font_sizes/font_size = 64
+text = "Loading..."
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=1942929255]
+offset_left = -375.0
+offset_right = 381.0
+offset_bottom = 27.0
+theme_override_fonts/font = ExtResource("1_lvd47")
+theme_override_font_sizes/font_size = 32

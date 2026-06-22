@@ -1,0 +1,139 @@
+[gd_scene format=3 uid="uid://dau06pvjkscxu"]
+
+[ext_resource type="Script" uid="uid://crvracta2l6s8" path="res://Assets/Features/Dialogue_scenes/scripts/dialogue_box.gd" id="1_jxfin"]
+[ext_resource type="FontFile" path="res://Assets/Shared/VarelaRound-Regular.ttf" id="2_2lpl4"]
+[ext_resource type="Theme" path="res://Assets/Shared/theme1.tres" id="3_2lpl4"]
+
+[node name="dialogue_box" type="Control" unique_id=1519377850]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_jxfin")
+
+[node name="input_name_box" type="VBoxContainer" parent="." unique_id=87876554]
+visible = false
+layout_mode = 0
+offset_left = -331.0
+offset_top = -235.0
+offset_right = 348.0
+offset_bottom = 6.0
+theme_override_constants/separation = 20
+
+[node name="Label" type="Label" parent="input_name_box" unique_id=1790732320]
+layout_mode = 2
+theme = ExtResource("3_2lpl4")
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.5764706)
+theme_override_font_sizes/font_size = 32
+text = "What's your name, traveler?"
+
+[node name="LineEdit" type="LineEdit" parent="input_name_box" unique_id=69255565]
+layout_mode = 2
+theme = ExtResource("3_2lpl4")
+theme_override_font_sizes/font_size = 32
+placeholder_text = "Name"
+
+[node name="name_button" type="Button" parent="input_name_box" unique_id=2070896933]
+layout_mode = 2
+theme = ExtResource("3_2lpl4")
+theme_override_font_sizes/font_size = 32
+text = "Confirm"
+
+[node name="choice_box" type="VBoxContainer" parent="." unique_id=965959551]
+layout_mode = 1
+offset_left = -503.0
+offset_top = -312.0
+offset_right = 508.0
+offset_bottom = 36.0
+theme_override_constants/separation = 45
+alignment = 1
+
+[node name="option_A" type="Button" parent="choice_box" unique_id=375047721]
+custom_minimum_size = Vector2(1.485, 0)
+layout_mode = 2
+size_flags_stretch_ratio = 1.22
+theme = ExtResource("3_2lpl4")
+theme_override_font_sizes/font_size = 32
+text = "blablabla"
+
+[node name="option_B" type="Button" parent="choice_box" unique_id=22122009]
+layout_mode = 2
+theme = ExtResource("3_2lpl4")
+theme_override_font_sizes/font_size = 32
+text = "blablabla"
+
+[node name="option_C" type="Button" parent="choice_box" unique_id=1881458085]
+layout_mode = 2
+theme = ExtResource("3_2lpl4")
+theme_override_font_sizes/font_size = 32
+text = "blablabla"
+
+[node name="option_D" type="Button" parent="choice_box" unique_id=808221414]
+layout_mode = 2
+theme = ExtResource("3_2lpl4")
+theme_override_font_sizes/font_size = 32
+text = "blablabla"
+
+[node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=354531960]
+layout_mode = 0
+offset_left = -902.0
+offset_top = 114.0
+offset_right = 906.0
+offset_bottom = 491.0
+
+[node name="ColorRect" type="ColorRect" parent="NinePatchRect" unique_id=273606332]
+layout_mode = 0
+offset_right = 1791.0
+offset_bottom = 376.0
+color = Color(0, 0, 0, 0.57254905)
+
+[node name="ColorRect2" type="ColorRect" parent="NinePatchRect" unique_id=2142178325]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 37.0
+offset_right = 340.0
+offset_bottom = 347.0
+color = Color(0, 0, 0, 0.57254905)
+
+[node name="name" type="RichTextLabel" parent="NinePatchRect" unique_id=870470638]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.034
+anchor_bottom = 0.053000003
+offset_left = 381.0
+offset_top = 11.0
+offset_right = 830.528
+offset_bottom = 96.019
+theme = ExtResource("3_2lpl4")
+theme_override_fonts/normal_font = ExtResource("2_2lpl4")
+theme_override_font_sizes/normal_font_size = 64
+text = "name"
+
+[node name="text" type="RichTextLabel" parent="NinePatchRect" unique_id=1131871584]
+layout_mode = 0
+offset_left = 390.0
+offset_top = 97.0
+offset_right = 1729.0
+offset_bottom = 349.0
+theme = ExtResource("3_2lpl4")
+theme_override_fonts/normal_font = ExtResource("2_2lpl4")
+theme_override_font_sizes/normal_font_size = 32
+text = "hello! blablablskndviboswiwydbcipadcpiauydbviçbwsviuyhsbpviabibdbvd"
+
+[node name="typewriter_timer" type="Timer" parent="NinePatchRect" unique_id=24715146]
+wait_time = 0.5
+
+[node name="skip_lbl" type="Label" parent="." unique_id=1848280897]
+layout_mode = 0
+offset_left = 644.0
+offset_top = 422.0
+offset_right = 859.0
+offset_bottom = 462.0
+theme = ExtResource("3_2lpl4")
+text = "SPACE to skip"
+
+[connection signal="pressed" from="input_name_box/name_button" to="." method="_on_name_button_pressed"]
+[connection signal="pressed" from="choice_box/option_A" to="." method="_on_option_a_pressed"]
+[connection signal="pressed" from="choice_box/option_B" to="." method="_on_option_b_pressed"]
+[connection signal="pressed" from="choice_box/option_C" to="." method="_on_option_c_pressed"]
+[connection signal="pressed" from="choice_box/option_D" to="." method="_on_option_d_pressed"]

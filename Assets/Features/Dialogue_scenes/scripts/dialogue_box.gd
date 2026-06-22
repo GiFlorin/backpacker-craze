@@ -23,16 +23,16 @@ func _input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("Jump"):
 		typewriter_skip = true
 
-func change_name_to(text:String, type_vel:float=6):
+func change_name_to(text:String):
 	character_name.text = str(text)
 	# typewriter_effect(len(text), character_name, type_vel)
 
 func change_text_to(text:String, type_vel:float=15):
 	text_field.text = str(text)
 	ready_to_go = false
-	typewriter_effect(len(text), text_field, type_vel)
+	typewriter_effect(len(text), text_field)
 
-func typewriter_effect(len:int, node:Control, type_vel:float=15):
+func typewriter_effect(len:int, node:Control, type_vel:float=50):
 	var vis_char = 0
 	typewriter_skip = false
 	node.visible_characters = 0
@@ -53,6 +53,7 @@ func set_options(options:Array):
 		index += 1
 		if len(options) > index:
 			child.text = options[index]['text']
+			child.show()
 		else:
 			child.hide()
 

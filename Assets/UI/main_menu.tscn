@@ -1,25 +1,26 @@
 [gd_scene format=3 uid="uid://ccsqyt075cbul"]
 
-[ext_resource type="Script" uid="uid://onj2bhaxi8fl" path="res://Assets/UI/play_button.gd" id="1_af46u"]
+[ext_resource type="Script" uid="uid://c7x8nn4ms7ap0" path="res://Assets/UI/main_menu.gd" id="1_2rim3"]
 [ext_resource type="Texture2D" uid="uid://c8rxm057pwla4" path="res://Assets/UI/title screen art resize_1920x1080.png" id="1_fhxi4"]
+[ext_resource type="FontFile" uid="uid://kwcy12p1ml0f" path="res://Assets/Shared/VarelaRound-Regular.ttf" id="2_2rim3"]
 
-[node name="MainMenu" type="Node2D" unique_id=906774019]
+[node name="MainMenu" type="Node2D" unique_id=1617041168]
+script = ExtResource("1_2rim3")
 
-[node name="TitleScreenArtResize1920x1080" type="Sprite2D" parent="." unique_id=1238628081]
-position = Vector2(0.11108017, 1.5000229)
-scale = Vector2(0.5990741, 0.59907407)
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1463732015]
+
+[node name="TitleScreenArtResize1920x1080" type="Sprite2D" parent="." unique_id=1938556345]
+position = Vector2(-3, -3)
+scale = Vector2(0.60833335, 0.60833335)
 texture = ExtResource("1_fhxi4")
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=718355671]
-
-[node name="play_button" type="Button" parent="." unique_id=1857274938]
-offset_left = -429.0
-offset_top = 170.0
-offset_right = -357.0
-offset_bottom = 223.0
+[node name="Label" type="Label" parent="." unique_id=131979985]
+offset_left = -567.0
+offset_top = 182.0
+offset_right = -227.0
+offset_bottom = 265.0
+theme_override_fonts/font = ExtResource("2_2rim3")
 theme_override_font_sizes/font_size = 32
-text = "Play
-"
-script = ExtResource("1_af46u")
-
-[connection signal="pressed" from="play_button" to="play_button" method="_on_pressed"]
+text = "Click anywhere 
+to play"
+horizontal_alignment = 1

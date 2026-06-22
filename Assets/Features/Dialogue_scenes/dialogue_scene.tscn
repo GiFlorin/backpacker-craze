@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://ctti1ly30v3p6"]
 
 [ext_resource type="Script" uid="uid://cu172khecoudj" path="res://Assets/Features/Dialogue_scenes/scripts/dialogue_scene.gd" id="1_eoa6h"]
-[ext_resource type="Script" uid="uid://crvracta2l6s8" path="res://Assets/Features/Dialogue_scenes/scripts/dialogue_box.gd" id="2_5bh3x"]
 [ext_resource type="Script" uid="uid://hdd5scfsx38" path="res://Assets/Features/Dialogue_scenes/scripts/dialogues.gd" id="2_axfue"]
 [ext_resource type="Script" uid="uid://d3ppmpsft1r1d" path="res://Assets/Features/Dialogue_scenes/scripts/player_sprite.gd" id="2_q7hxf"]
 [ext_resource type="Script" uid="uid://4712y4oa5rpv" path="res://Assets/Features/Dialogue_scenes/scripts/npc_sprite.gd" id="2_rendj"]
@@ -10,6 +9,7 @@
 [ext_resource type="Script" uid="uid://cvuxt2dacht0x" path="res://Assets/Features/Dialogue_scenes/dialogue_files/jungle_city_dialogue.gd" id="5_xkb6u"]
 [ext_resource type="Script" uid="uid://qclge4x3inci" path="res://Assets/Features/Dialogue_scenes/scripts/backgrounds.gd" id="6_b5wxp"]
 [ext_resource type="Texture2D" uid="uid://bd4sdpuqi4dg7" path="res://Assets/Features/Dialogue_scenes/assets/MC/Amused.png" id="7_b5wxp"]
+[ext_resource type="PackedScene" uid="uid://dau06pvjkscxu" path="res://Assets/Features/Dialogue_scenes/dialogue_box.tscn" id="11_b5wxp"]
 
 [sub_resource type="Animation" id="Animation_q7hxf"]
 length = 0.001
@@ -100,129 +100,29 @@ script = ExtResource("6_b5wxp")
 
 [node name="Sprite2D" type="Sprite2D" parent="backgrounds" unique_id=1138044069]
 
-[node name="player_sprite" type="Node2D" parent="." unique_id=1117874436]
-position = Vector2(-717, 33)
-script = ExtResource("2_q7hxf")
-
-[node name="Sprite2D" type="Sprite2D" parent="player_sprite" unique_id=1397011702]
-position = Vector2(230, -8.999992)
-scale = Vector2(0.35, 0.35)
-texture = ExtResource("7_b5wxp")
-
 [node name="npc_sprite" type="Node2D" parent="." unique_id=1349788039]
 script = ExtResource("2_rendj")
 
 [node name="Sprite2D" type="Sprite2D" parent="npc_sprite" unique_id=2018280980]
-position = Vector2(554, 13.999985)
+position = Vector2(1.000061, 2.000001)
 scale = Vector2(0.35, 0.35)
 texture = ExtResource("3_q7hxf")
 
-[node name="dialogue_box" type="Control" parent="." unique_id=2116486727]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-script = ExtResource("2_5bh3x")
-
-[node name="input_name_box" type="VBoxContainer" parent="dialogue_box" unique_id=308455714]
-visible = false
+[node name="dialogue_box" parent="." unique_id=1519377850 instance=ExtResource("11_b5wxp")]
 layout_mode = 0
-offset_left = -331.0
-offset_top = -235.0
-offset_right = 348.0
-offset_bottom = 6.0
-theme_override_constants/separation = 20
 
-[node name="Label" type="Label" parent="dialogue_box/input_name_box" unique_id=999532520]
-layout_mode = 2
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.5764706)
-theme_override_font_sizes/font_size = 32
-text = "What's your name, traveler?"
+[node name="player_sprite" type="Node2D" parent="dialogue_box" unique_id=1117874436]
+position = Vector2(-717, 33)
+script = ExtResource("2_q7hxf")
 
-[node name="LineEdit" type="LineEdit" parent="dialogue_box/input_name_box" unique_id=1231643476]
-layout_mode = 2
-theme_override_font_sizes/font_size = 32
-placeholder_text = "Name"
-
-[node name="name_button" type="Button" parent="dialogue_box/input_name_box" unique_id=1454105585]
-layout_mode = 2
-theme_override_font_sizes/font_size = 32
-text = "Confirm"
-
-[node name="choice_box" type="VBoxContainer" parent="dialogue_box" unique_id=404986743]
-visible = false
-layout_mode = 1
-offset_left = -424.0
-offset_top = -312.0
-offset_right = 449.0
-offset_bottom = 36.0
-theme_override_constants/separation = 45
-alignment = 1
-
-[node name="option_A" type="Button" parent="dialogue_box/choice_box" unique_id=1766015089]
-custom_minimum_size = Vector2(1.485, 0)
-layout_mode = 2
-size_flags_stretch_ratio = 1.22
-theme_override_font_sizes/font_size = 32
-text = "blablabla"
-
-[node name="option_B" type="Button" parent="dialogue_box/choice_box" unique_id=2054494137]
-layout_mode = 2
-theme_override_font_sizes/font_size = 32
-text = "blablabla"
-
-[node name="option_C" type="Button" parent="dialogue_box/choice_box" unique_id=1073686486]
-layout_mode = 2
-theme_override_font_sizes/font_size = 32
-text = "blablabla"
-
-[node name="option_D" type="Button" parent="dialogue_box/choice_box" unique_id=468425414]
-layout_mode = 2
-theme_override_font_sizes/font_size = 32
-text = "blablabla"
-
-[node name="NinePatchRect" type="NinePatchRect" parent="dialogue_box" unique_id=2108500493]
-layout_mode = 0
-offset_left = -902.0
-offset_top = 114.0
-offset_right = 906.0
-offset_bottom = 491.0
-
-[node name="ColorRect" type="ColorRect" parent="dialogue_box/NinePatchRect" unique_id=61288585]
-layout_mode = 0
-offset_right = 1791.0
-offset_bottom = 376.0
-color = Color(0, 0, 0, 0.57254905)
-
-[node name="name" type="RichTextLabel" parent="dialogue_box/NinePatchRect" unique_id=492383467]
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 0.034
-anchor_bottom = 0.053000003
-offset_left = 87.0
-offset_top = 11.0
-offset_right = 342.52798
-offset_bottom = 96.019
-theme_override_font_sizes/normal_font_size = 64
-text = "name"
-
-[node name="text" type="RichTextLabel" parent="dialogue_box/NinePatchRect" unique_id=1131128038]
-layout_mode = 0
-offset_left = 89.0
-offset_top = 97.0
-offset_right = 1729.0
-offset_bottom = 349.0
-theme_override_font_sizes/normal_font_size = 32
-text = "hello! blablablskndviboswiwydbcipadcpiauydbviçbwsviuyhsbpviabibdbvd"
-
-[node name="typewriter_timer" type="Timer" parent="dialogue_box/NinePatchRect" unique_id=677212701]
-wait_time = 0.5
+[node name="Sprite2D" type="Sprite2D" parent="dialogue_box/player_sprite" unique_id=1397011702]
+position = Vector2(16.000004, 190)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("7_b5wxp")
+region_enabled = true
+region_rect = Rect2(0, 0, 2086, 2379.4243)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=932320669]
 zoom = Vector2(0.6, 0.6)
 
 [connection signal="choice_made" from="dialogue_box" to="." method="_on_dialogue_box_choice_made"]
-[connection signal="pressed" from="dialogue_box/input_name_box/name_button" to="dialogue_box" method="_on_name_button_pressed"]
-[connection signal="pressed" from="dialogue_box/choice_box/option_A" to="dialogue_box" method="_on_option_a_pressed"]
-[connection signal="pressed" from="dialogue_box/choice_box/option_B" to="dialogue_box" method="_on_option_b_pressed"]
-[connection signal="pressed" from="dialogue_box/choice_box/option_C" to="dialogue_box" method="_on_option_c_pressed"]
-[connection signal="pressed" from="dialogue_box/choice_box/option_D" to="dialogue_box" method="_on_option_d_pressed"]
