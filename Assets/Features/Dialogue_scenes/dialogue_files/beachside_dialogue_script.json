@@ -5,7 +5,7 @@
 			"id": "scene_1",
 			"title": "Beachside landing / encounter with Marina",
 			"background": "A",
-			"song": "",
+			"song": "boardwalk_azure",
 			"npcs_present": [
 				"Marina"
 			],
@@ -225,7 +225,7 @@
 			"id": "scene_2",
 			"title": "Beachside tour",
 			"background": "B",
-			"song": "",
+			"song": "boardwalk_azure",
 			"npcs_present": [
 				"Marina"
 			],
@@ -456,7 +456,7 @@
 			"id": "scene_3",
 			"title": "Bet / encounter with Malcolm",
 			"background": "",
-			"song": "",
+			"song": "boardwalk_azure",
 			"npcs_present": [
 				"Marina",
 				"Malcolm"
@@ -848,9 +848,9 @@
 			"id": "scene_4",
 			"title": "Encounter with the con-artist",
 			"background": "A",
-			"song": "",
+			"song": "conway_the_con_man",
 			"npcs_present": [
-				"Con-artist"
+				"Conway"
 			],
 			"dialogue": [
 				{
@@ -889,7 +889,7 @@
 				{
 					"id": "line_056",
 					"type": "dialogue",
-					"speaker": "Shopkeeper",
+					"speaker": "Conway",
 					"text": "Welcome, welcome! Oh my, looks like you’ve been backpacking a lot, haven’t you? I can tell right away that you need some supplies and you came to the right guy!",
 					"mood": "wave_talking_wink",
 					"condition": "vendor_approached",
@@ -933,7 +933,7 @@
 				{
 					"id": "line_059",
 					"type": "choices",
-					"speaker": "Shopkeeper",
+					"speaker": "Conway",
 					"text": "Surely something on this table interests you! I assure you, everything here will make your backpacking journey much more efficient! These items are actually on sale right now, fifty percent off! What a steal, am I right?",
 					"mood": "wave_talking_wink",
 					"condition": "vendor_offer",
@@ -977,7 +977,7 @@
 				{
 					"id": "line_062E",
 					"type": "dialogue",
-					"speaker": "Shopkeeper",
+					"speaker": "Conway",
 					"text": "Perfect! Trust me when I say this, this rope is the most durable there is!",
 					"mood": "talking_wink",
 					"condition": "choice_E_selected",
@@ -1010,7 +1010,7 @@
 				{
 					"id": "line_062F",
 					"type": "dialogue",
-					"speaker": "Shopkeeper",
+					"speaker": "Conway",
 					"text": "No worries, come by anytime!",
 					"mood": "wave_talking_wink",
 					"condition": "choice_F_selected",
@@ -1021,7 +1021,7 @@
 				{
 					"id": "line_063F",
 					"type": "dialogue",
-					"speaker": "Shopkeeper",
+					"speaker": "Conway",
 					"text": "Hey, since you’re traveling, you most certainly should check out Lake Ryoka. It has a lot more natural greenery, if you enjoy that kind of thing.",
 					"mood": "smile_not_wave",
 					"condition": "choice_F_selected",
@@ -1057,7 +1057,7 @@
 			"id": "scene_5",
 			"title": "Restaurant",
 			"background": "D",
-			"song": "",
+			"song": "boardwalk_azure",
 			"npcs_present": [
 				"Marina",
 				"Malcolm"

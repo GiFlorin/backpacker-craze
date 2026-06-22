@@ -18,6 +18,7 @@ func _ready() -> void:
 	dialogues.open_dialogue_file()
 	choice_box.hide()
 	set_dialogue_visual(dialogues.load_first()) 
+	MusicManager.play_music(dialogues.get_scene_data()['song'])
 	backgrounds.set_background(dialogues.get_scene_data()['background'])
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
