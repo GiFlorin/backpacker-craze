@@ -66,6 +66,8 @@ func advance():
 		if len(data['scenes'][_scene_index]['dialogue']) > _index:
 			if data['scenes'][_scene_index]['dialogue'][_index]['next'] == 'end_scene':
 				advance_scene()
+			elif data['scenes'][_scene_index]['dialogue'][_index]['next'] == 'end_dest':
+				advance_dest()
 			else: _index += 1
 			var dialogue_data = data['scenes'][_scene_index]['dialogue'][_index]
 			
@@ -89,6 +91,6 @@ func advance_scene(): # FIX
 	$"../backgrounds".set_background(get_scene_data()['background'])
 	$"../AnimationPlayer".play_backwards("scene_transition_in")
 	get_tree().paused = false
-	
-	if data['scenes'][_scene_index]['dialogue'][_index]['next'] == 'end_dest':
-		pass # TODO next dest
+
+func advance_dest():
+	SceneTransition.change_scene("res://Assets/Core/journal/journal.tscn", 'clouds')

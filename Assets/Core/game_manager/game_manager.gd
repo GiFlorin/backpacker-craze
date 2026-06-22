@@ -11,6 +11,7 @@ var player_position: Vector2 = Vector2.ZERO
 var player_name: String
 
 enum {
+	START,
 	BEACH,
 	LAKESIDE,
 	JUNGLE_CITY

@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bgcnopoka4wbd" path="res://Assets/Core/journal/assets/seaside.png" id="4_djp28"]
 [ext_resource type="Texture2D" uid="uid://b5bq5ioqpahpy" path="res://Assets/Core/journal/assets/lakeside.png" id="5_teyn4"]
 [ext_resource type="Texture2D" uid="uid://by8urpryc0bcx" path="res://Assets/Core/journal/assets/mc_icon.png" id="6_ldtpb"]
+[ext_resource type="FontFile" uid="uid://kwcy12p1ml0f" path="res://Assets/Shared/VarelaRound-Regular.ttf" id="7_qoaju"]
 
 [sub_resource type="Animation" id="Animation_kl8vd"]
 length = 0.001
@@ -93,6 +94,13 @@ _data = {
 [node name="Journal" type="Node2D" unique_id=18227770]
 script = ExtResource("1_ie2wr")
 
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1078755630]
+offset_left = -662.0
+offset_top = -378.0
+offset_right = 729.0
+offset_bottom = 374.0
+color = Color(0.34334865, 0.3647844, 0.5582935, 1)
+
 [node name="Camera" type="Camera2D" parent="." unique_id=1122235568]
 
 [node name="BlankJournal" type="Sprite2D" parent="." unique_id=118392950]
@@ -135,3 +143,12 @@ texture = ExtResource("6_ldtpb")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=93961687]
 libraries/ = SubResource("AnimationLibrary_htvje")
+
+[node name="continue_lbl" type="Label" parent="." unique_id=791791913]
+offset_left = 133.0
+offset_top = 279.0
+offset_right = 509.0
+offset_bottom = 319.0
+theme_override_fonts/font = ExtResource("7_qoaju")
+theme_override_font_sizes/font_size = 32
+text = "press SPACE to continue"

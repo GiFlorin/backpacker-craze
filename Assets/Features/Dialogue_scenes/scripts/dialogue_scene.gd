@@ -5,7 +5,7 @@ extends Control
 @onready var dialogues: Node2D = $dialogues
 @onready var backgrounds: Node2D = $backgrounds
 @onready var npc_sprite: Node2D = $npc_sprite
-@onready var player_sprite: Node2D = $player_sprite
+@onready var player_sprite: Node2D = $dialogue_box/player_sprite
 
 var cur_destination = ''
 var cur_scene = ''
