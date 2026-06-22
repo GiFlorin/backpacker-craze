@@ -5,8 +5,6 @@
 [ext_resource type="Script" uid="uid://d3ppmpsft1r1d" path="res://Assets/Features/Dialogue_scenes/scripts/player_sprite.gd" id="2_q7hxf"]
 [ext_resource type="Script" uid="uid://4712y4oa5rpv" path="res://Assets/Features/Dialogue_scenes/scripts/npc_sprite.gd" id="2_rendj"]
 [ext_resource type="Texture2D" uid="uid://b27l4t4wq0ulj" path="res://Assets/Features/Dialogue_scenes/assets/marina/Annoyed.png" id="3_q7hxf"]
-[ext_resource type="Script" uid="uid://cbk3d46udi7ha" path="res://Assets/Features/Dialogue_scenes/dialogue_files/lakeside_dialogue.gd" id="4_b5wxp"]
-[ext_resource type="Script" uid="uid://cvuxt2dacht0x" path="res://Assets/Features/Dialogue_scenes/dialogue_files/jungle_city_dialogue.gd" id="5_xkb6u"]
 [ext_resource type="Script" uid="uid://qclge4x3inci" path="res://Assets/Features/Dialogue_scenes/scripts/backgrounds.gd" id="6_b5wxp"]
 [ext_resource type="Texture2D" uid="uid://bd4sdpuqi4dg7" path="res://Assets/Features/Dialogue_scenes/assets/MC/Amused.png" id="7_b5wxp"]
 [ext_resource type="PackedScene" uid="uid://dau06pvjkscxu" path="res://Assets/Features/Dialogue_scenes/dialogue_box.tscn" id="11_b5wxp"]
@@ -92,8 +90,6 @@ color = Color(0, 0, 0, 0)
 
 [node name="dialogues" type="Node2D" parent="." unique_id=187108511]
 script = ExtResource("2_axfue")
-lakeside_dialogue = ExtResource("4_b5wxp")
-jungle_city_dialogue = ExtResource("5_xkb6u")
 
 [node name="backgrounds" type="Node2D" parent="." unique_id=24608802]
 script = ExtResource("6_b5wxp")

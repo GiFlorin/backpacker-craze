@@ -733,17 +733,6 @@
 					"next": "minigame_surf_lesson"
 				},
 				{
-					"id": "minigame_surf_lesson",
-					"type": "mechanic",
-					"speaker": "System",
-					"text": "",
-					"mood": "neutral",
-					"condition": "player_accepted_surfing_bet",
-					"cg": null,
-					"choices": [],
-					"next": "scene_3_postminigame"
-				},
-				{
 					"id": "scene_3_postminigame",
 					"type": "dialogue",
 					"speaker": "Kid",
@@ -821,17 +810,6 @@
 					"next": "contacts_menu"
 				},
 				{
-					"id": "contacts_menu",
-					"type": "mechanic",
-					"speaker": "System",
-					"text": "",
-					"mood": "neutral",
-					"condition": "contacts_not_added",
-					"cg": null,
-					"choices": [],
-					"next": "line_053"
-				},
-				{
 					"id": "line_053",
 					"type": "dialogue",
 					"speaker": "Malcolm",
@@ -896,17 +874,6 @@
 					"cg": null,
 					"choices": [],
 					"next": "line_057"
-				},
-				{
-					"id": "line_057",
-					"type": "mechanic",
-					"speaker": "System",
-					"text": "",
-					"mood": "neutral",
-					"condition": "vendor_approached",
-					"cg": null,
-					"choices": [],
-					"next": "line_058"
 				},
 				{
 					"id": "line_058C",
@@ -1063,17 +1030,6 @@
 				"Malcolm"
 			],
 			"dialogue": [
-				{
-					"id": "scene_5_start",
-					"type": "mechanic",
-					"speaker": "System",
-					"text": "",
-					"mood": "neutral",
-					"condition": "restaurant_location_received",
-					"cg": null,
-					"choices": [],
-					"next": "line_066"
-				},
 				{
 					"id": "line_066",
 					"type": "narrator",
@@ -1362,17 +1318,6 @@
 					"mood": "renewed",
 					"condition": "next_day",
 					"cg": "MC sleeping comfortably",
-					"choices": [],
-					"next": "line_086"
-				},
-				{
-					"id": "line_086",
-					"type": "mechanic",
-					"speaker": "System",
-					"text": "",
-					"mood": "neutral",
-					"condition": "next_destination_unlocked",
-					"cg": null,
 					"choices": [],
 					"next": "end_dest"
 				}

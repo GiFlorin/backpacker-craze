@@ -79,4 +79,4 @@ func _on_dialogue_box_choice_made(index: int) -> void:
 			dialogues.lakeside_conditions[condition] = true
 		GameManager.JUNGLE_CITY:
 			dialogues.jungle_city_conditions[condition] = true
-	next_dialogue()
+	dialogue_box.change_text_to(data['choices'][index]['consequence_text'])

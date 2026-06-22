@@ -13,8 +13,11 @@ func _process(delta: float) -> void:
 	pass
 
 func change_mood(new_mood: String):
-	sprite.texture = sprites_resources[new_mood]
-	cur_mood = new_mood
+	if sprites_resources.has(new_mood):
+		sprite.texture = sprites_resources[new_mood]
+		cur_mood = new_mood
+	else:
+		print('Player sprite (%s) invalid' % new_mood)
 
 var sprites_resources = {
 	'amused': load("res://Assets/Features/Dialogue_scenes/assets/MC/Amused.png"),

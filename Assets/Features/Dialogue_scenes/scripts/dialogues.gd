@@ -1,8 +1,8 @@
 extends Node2D
 
 var beachside_dialogue_path := 'res://Assets/Features/Dialogue_scenes/dialogue_files/beachside_dialogue_script.json'
-@export var lakeside_dialogue: Script
-@export var jungle_city_dialogue: Script
+var lakeside_dialogue_path := "res://Assets/Features/Dialogue_scenes/dialogue_files/lakeside_dialogue_script.json"
+var jungle_city_dialogue_path := "res://Assets/Features/Dialogue_scenes/dialogue_files/jungle_dialogue_script.json"
 
 var _index = 0
 var _scene_index = 0
@@ -39,8 +39,10 @@ func _ready() -> void:
 				file = FileAccess.open(beachside_dialogue_path, FileAccess.READ)
 			GameManager.LAKESIDE:
 				cur_conditions = lakeside_conditions
+				file = FileAccess.open(lakeside_dialogue_path, FileAccess.READ)
 			GameManager.JUNGLE_CITY:
 				cur_conditions = jungle_city_conditions
+				file = FileAccess.open(jungle_city_dialogue_path, FileAccess.READ)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -93,4 +95,6 @@ func advance_scene(): # FIX
 	get_tree().paused = false
 
 func advance_dest():
+	_index = 0
+	_scene_index = 0
 	SceneTransition.change_scene("res://Assets/Core/journal/journal.tscn", 'clouds')
